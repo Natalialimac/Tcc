@@ -6,18 +6,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 180,
+  },
   button: {
     backgroundColor: '#FFED46',
     borderRadius: 30,
     width: 300,
     height: 50,
     marginBottom: 10,
-    marginTop:80,
     justifyContent: 'center',
     alignItems: 'center',
   },
   button2: {
-    marginTop: 20,
+    marginTop: 15,
   },
   buttonText: {
     fontSize: 18,
@@ -25,7 +28,8 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   logo: {
-    marginBottom: 20,
+    flex: 1,
+    resizeMode: 'cover',
   },
 });
 

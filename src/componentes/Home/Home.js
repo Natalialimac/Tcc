@@ -4,7 +4,7 @@ import * as Speech from 'expo-speech';
 
 import styles from './styles';
 
-const Home = ({}) => {
+const Home = () => {
   const handleTextToSpeech = (text) => {
     Speech.speak(text, {
       language: 'pt-BR',
@@ -15,28 +15,30 @@ const Home = ({}) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/logo.png')} style={styles.logo} />
+      <Image source={require('../../assets/logo2.png')} style={styles.logo} />
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => handleTextToSpeech('Clique aqui para começar')}
-      >
-        <Text style={styles.buttonText}>Clique aqui para começar</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handleTextToSpeech('Clique aqui para começar')}
+        >
+          <Text style={styles.buttonText}>Clique aqui para começar</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[styles.button, styles.button2]}
-        onPress={() => handleTextToSpeech('Clique para saber como jogar')}
-      >
-        <Text style={styles.buttonText}>Clique para saber como jogar</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.button2]}
+          onPress={() => handleTextToSpeech('Clique para saber como jogar')}
+        >
+          <Text style={styles.buttonText}>Clique para saber como jogar</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[styles.button, styles.button2]}
-        onPress={() => handleTextToSpeech('Loja')}
-      >
-        <Text style={styles.buttonText}>Loja</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.button2]}
+          onPress={() => handleTextToSpeech('Loja')}
+        >
+          <Text style={styles.buttonText}>Loja</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
