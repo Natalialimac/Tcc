@@ -1,20 +1,22 @@
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, Image } from 'react-native';
 import * as Speech from 'expo-speech';
 
 import styles from './styles';
 
-const Home = () => {
+const Home = ({}) => {
   const handleTextToSpeech = (text) => {
     Speech.speak(text, {
-      language: 'pt-BR', // Defina o idioma desejado
-      pitch: 1, // Ajuste o tom da voz (opcional)
-      rate: 1, // Ajuste a velocidade da voz (opcional)
+      language: 'pt-BR',
+      pitch: 1,
+      rate: 1,
     });
   };
 
   return (
     <View style={styles.container}>
+      <Image source={require('../../assets/logo.png')} style={styles.logo} />
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => handleTextToSpeech('Clique aqui para começar')}

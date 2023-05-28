@@ -7,12 +7,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#250941',
-    fontStyle:"Monda"
-  },
 });
 
 export default styles;
