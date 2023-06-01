@@ -4,7 +4,8 @@ import * as Speech from 'expo-speech';
 
 import styles from './styles';
 
-const Home = () => {
+const Home = ({ navigation }) => {
+  //AJEITAR AUDIO
   const handleTextToSpeech = (text) => {
     Speech.speak(text, {
       language: 'pt-BR',
@@ -20,21 +21,21 @@ const Home = () => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => handleTextToSpeech('Clique aqui para começar')}
+          onPress={() => navigation.navigate("About")}
         >
           <Text style={styles.buttonText}>Clique aqui para começar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.button, styles.button2]}
-          onPress={() => handleTextToSpeech('Clique para saber como jogar')}
+          onPress={() => navigation.navigate("About")}
         >
           <Text style={styles.buttonText}>Clique para saber como jogar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={[styles.button, styles.button2]}
-          onPress={() => handleTextToSpeech('Loja')}
+          onPress={() => navigation.navigate("About")}
         >
           <Text style={styles.buttonText}>Loja</Text>
         </TouchableOpacity>
