@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 
 const questions = [
@@ -54,6 +54,7 @@ const Leveling = ({ onLevelSelected }) => {
 
     return (
       <View style={styles.container}>
+        <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle}/>
         <Text style={styles.questionText}>{question.question}</Text>
         {question.options.map((option, index) => (
           <TouchableOpacity

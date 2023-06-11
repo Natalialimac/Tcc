@@ -25,6 +25,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
-});
+  tonyStyle:{
+    resizeMode: 'contain',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    height:200
+    
+  }
+}); 
 
 export default styles;
