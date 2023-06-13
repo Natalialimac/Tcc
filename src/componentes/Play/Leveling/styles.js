@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     width: 200,
     alignItems: 'center',
+    bottom: '30%' 
   },
   optionText: {
     fontSize: 16,
@@ -29,9 +30,11 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     position: 'absolute',
     bottom: 0,
-    left: 0,
+    left: "1%",
     height:200
-    
+  },
+  balloon:{
+    top: "30%" 
   }
 }); 
 
