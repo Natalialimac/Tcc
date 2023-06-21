@@ -2,21 +2,32 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
-//nivelação 10 perguntas
+
 const questions = [
-  { question: 'Quanto é 7 + 5?',  options: ['10', '11', '12'],   correctAnswer: '12' },
-  { question: 'Quanto é 10 - 2?', options: ['6', '7', '8'],      correctAnswer: '8'  },
-  { question: 'Quanto é 3 x 4?',  options: ['9', '10', '12'],    correctAnswer: '12' },
-  { question: 'Quanto é 18 ÷ 3?', options: ['4', '6', '8'],      correctAnswer: '6'  },
-  { question: 'Quanto é 9 + 6',   options: ['13', '14', '15'],   correctAnswer: '15' },
-  { question: 'Quanto é 5 - 1?',  options: ['2', '3', '4'],      correctAnswer: '4'  },
-  { question: 'Quanto é 2 x 7?',  options: ['12', '13', '14'],   correctAnswer: '14' },
-  { question: 'Quanto é 15 ÷ 5?', options: ['2', '3', '4'],      correctAnswer: '3'  },
-  { question: 'Quanto é 11 + 9?', options: ['18', '19', '20'],   correctAnswer: '20' },
-  { question: 'Quanto é 16 - 8?', options: ['6', '7', '8'],      correctAnswer: '8'  },
+  { question: 'Quanto é 7 + 5?', options: ['10', '11', '12'], correctAnswer: '12' },
+  { question: 'Quanto é 10 - 2?', options: ['6', '7', '8'], correctAnswer: '8' },
+  { question: 'Quanto é 3 x 4?', options: ['9', '10', '12'], correctAnswer: '12' },
+  { question: 'Quanto é 18 ÷ 3?', options: ['4', '6', '8'], correctAnswer: '6' },
+  { question: 'Quanto é 9 + 6?', options: ['13', '14', '15'], correctAnswer: '15' },
+  { question: 'Quanto é 5 - 1?', options: ['2', '3', '4'], correctAnswer: '4' },
+  { question: 'Quanto é 2 x 7?', options: ['12', '13', '14'], correctAnswer: '14' },
+  { question: 'Quanto é 15 ÷ 5?', options: ['2', '3', '4'], correctAnswer: '3' },
+  { question: 'Quanto é 11 + 9?', options: ['18', '19', '20'], correctAnswer: '20' },
+  { question: 'Quanto é 16 - 8?', options: ['6', '7', '8'], correctAnswer: '8' },
+  { question: 'Quanto é 2 + 3?', options: ['4', '5', '6'], correctAnswer: '5' },
+  { question: 'Quanto é 10 - 5?', options: ['3', '4', '5'], correctAnswer: '5' },
+  { question: 'Quanto é 4 x 3?', options: ['9', '10', '12'], correctAnswer: '12' },
+  { question: 'Quanto é 18 ÷ 6?', options: ['2', '3', '4'], correctAnswer: '3' },
+  { question: 'Quanto é 7 + 7?', options: ['12', '13', '14'], correctAnswer: '14' },
+  { question: 'Quanto é 9 - 3?', options: ['4', '5', '6'], correctAnswer: '6' },
+  { question: 'Quanto é 3 x 5?', options: ['13', '15', '17'], correctAnswer: '15' },
+  { question: 'Quanto é 20 ÷ 5?', options: ['2', '4', '5'], correctAnswer: '4' },
+  { question: 'Quanto é 8 + 6?', options: ['12', '13', '14'], correctAnswer: '14' },
+  { question: 'Quanto é 15 - 7?', options: ['7', '8', '9'], correctAnswer: '8' },
 ];
 
-const Leveling = ({navigation}) => {
+
+const Easy = ({navigation}) => {
  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -37,8 +48,6 @@ const Leveling = ({navigation}) => {
         navigation.navigate("Hard")
       } else if (correctAnswers >= 5) {
         navigation.navigate("Medium")
-      } else if (correctAnswers >= 3) {
-        navigation.navigate("Easy")
       } else {
         level = 'Nível não alcançado';
       }
@@ -85,4 +94,4 @@ const Leveling = ({navigation}) => {
   return null;
 };
 
-export default Leveling;
+export default Easy;

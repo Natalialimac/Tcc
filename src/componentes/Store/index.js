@@ -8,7 +8,7 @@ const Store = () => {
 
   return (
     <View style={styles.container}>
-      <Text>hjb</Text>
+      <Text>Loja</Text>
     </View>
   );
 };
