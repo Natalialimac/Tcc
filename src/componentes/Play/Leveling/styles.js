@@ -8,15 +8,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#855BAF',
   },
   tonyStyle: {
-    //width: 150,
-    //height: 150,
     marginBottom: 20,
   },
   balloon: {
+    position: 'flex',
+    top: 0,
     marginBottom: 20,
   },
   questionText: {
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
@@ -28,15 +28,20 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 20,
   },
+  imagesContainerAlt: {
+    //flexDirection: 'row-reverse',
+    //justifyContent: 'space-between',
+    //alignItems: 'center',
+    //marginHorizontal: 20,
+    marginBottom: 20,
+    //transform: [{ rotate: '90deg' }],
+  },
   imageButton: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
+    marginVertical: 10,
   },
   image: {
-    //width: 100,
-    //height: 10,
     borderRadius: 10,
   },
   feedbackText: {

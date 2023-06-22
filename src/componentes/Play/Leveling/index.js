@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 
-//10 questões
+// 10 questões
 const questions = [
   {
     images: [
@@ -22,6 +22,23 @@ const questions = [
       }
     ],
     question: 'Quanto é 4 + 4 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/symbol_div.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/symbol_equals.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/symbol_x.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Oi amiguinho, clique no símbolo da divisão'
   },
   {
     images: [
@@ -57,7 +74,108 @@ const questions = [
     ],
     question: 'Quanto é 4 - 2 ?'
   },
-  // Adicione outras perguntas com imagens e respostas corretas correspondentes
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é 4 - 2 ?'
+  },
 ];
 
 const Leveling = ({ navigation }) => {
@@ -90,8 +208,14 @@ const Leveling = ({ navigation }) => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
+  useEffect(() => {
+    if (currentQuestion < questions.length) {
+    }
+  }, [currentQuestion]);
+
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];
+    const imagesContainerStyle = currentQuestion % 2 === 0 ? styles.imagesContainer : styles.imagesContainerAlt;
 
     return (
       <View style={styles.container}>
@@ -115,7 +239,7 @@ const Leveling = ({ navigation }) => {
           </Animatable.View>
         </View>
 
-        <View style={styles.imagesContainer}>
+        <View style={imagesContainerStyle}>
           {question.images.map((image, index) => (
             <TouchableOpacity
               key={index}
