@@ -9,15 +9,15 @@ const questions = [
   {
     images: [
       {
-        source: require('../../../assets/number1.png'),
+        source: require('../../../assets/buttons/number1.png'),
         isCorrect: false
       },
       {
-        source: require('../../../assets/number8.png'),
+        source: require('../../../assets/buttons/number8.png'),
         isCorrect: true
       },
       {
-        source: require('../../../assets/number2.png'),
+        source: require('../../../assets/buttons/number2.png'),
         isCorrect: false
       }
     ],
@@ -26,15 +26,15 @@ const questions = [
   {
     images: [
       {
-        source: require('../../../assets/number1.png'),
+        source: require('../../../assets/buttons/number1.png'),
         isCorrect: true
       },
       {
-        source: require('../../../assets/number8.png'),
+        source: require('../../../assets/buttons/number8.png'),
         isCorrect: false
       },
       {
-        source: require('../../../assets/number2.png'),
+        source: require('../../../assets/buttons/number2.png'),
         isCorrect: false
       }
     ],
@@ -43,15 +43,15 @@ const questions = [
   {
     images: [
       {
-        source: require('../../../assets/number1.png'),
+        source: require('../../../assets/buttons/number1.png'),
         isCorrect: false
       },
       {
-        source: require('../../../assets/number8.png'),
+        source: require('../../../assets/buttons/number8.png'),
         isCorrect: false
       },
       {
-        source: require('../../../assets/number2.png'),
+        source: require('../../../assets/buttons/number2.png'),
         isCorrect: true
       }
     ],

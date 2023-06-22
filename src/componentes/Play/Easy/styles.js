@@ -7,35 +7,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#855BAF',
   },
+  tonyStyle: {
+    //width: 150,
+    //height: 150,
+    marginBottom: 20,
+  },
+  balloon: {
+    marginBottom: 20,
+  },
   questionText: {
     fontSize: 18,
     fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 10,
+  },
+  imagesContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 20,
     marginBottom: 20,
   },
-  optionButton: {
-    padding: 10,
-    backgroundColor: 'lightblue',
-    borderRadius: 5,
-    marginVertical: 10,
-    width: 200,
+  imageButton: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    bottom: '30%' 
+    margin: 10,
   },
-  optionText: {
+  image: {
+    //width: 100,
+    //height: 10,
+    borderRadius: 10,
+  },
+  feedbackText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'white',
+    textAlign: 'center',
+    marginTop: 10,
   },
-  tonyStyle:{
-    resizeMode: 'contain',
-    position: 'absolute',
-    bottom: 0,
-    left: "1%",
-    height:200
-  },
-  balloon:{
-    top: "30%" 
-  }
 }); 
 
 export default styles;

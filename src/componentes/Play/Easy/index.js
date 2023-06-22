@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
+import * as Animatable from 'react-native-animatable';
 
-const questions = [
+/*const questions = [
   { question: 'Quanto é 7 + 5?', options: ['10', '11', '12'], correctAnswer: '12' },
   { question: 'Quanto é 10 - 2?', options: ['6', '7', '8'], correctAnswer: '8' },
   { question: 'Quanto é 3 x 4?', options: ['9', '10', '12'], correctAnswer: '12' },
@@ -24,6 +25,27 @@ const questions = [
   { question: 'Quanto é 20 ÷ 5?', options: ['2', '4', '5'], correctAnswer: '4' },
   { question: 'Quanto é 8 + 6?', options: ['12', '13', '14'], correctAnswer: '14' },
   { question: 'Quanto é 15 - 7?', options: ['7', '8', '9'], correctAnswer: '8' },
+];*/
+
+const questions = [
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/4_macas.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/uva.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/3_limoes.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Toque na bolinha onde aparecem 4 maçãs.'
+  }
+  // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
 
 
@@ -33,8 +55,8 @@ const Easy = ({navigation}) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
 
-  const handleAnswer = (selectedAnswer) => {
-    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+  const handleAnswer = (isCorrect) => {
+    if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
       setAnswerFeedback('Parabéns! Você acertou!');
     } else {
@@ -46,7 +68,7 @@ const Easy = ({navigation}) => {
     
       if (correctAnswers >= 8) {
         navigation.navigate("Hard")
-      } else if (correctAnswers >= 5) {
+      } else if (correctAnswers >= 1) {
         navigation.navigate("Medium")
       } else {
         level = 'Nível não alcançado';
@@ -61,9 +83,12 @@ const Easy = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-        <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle}/>
+         <Animatable.View animation="fadeIn" duration={3000}>
+          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle}/>
+        </Animatable.View>
         
         <View style={styles.balloon}>
+        <Animatable.View animation="fadeIn" duration={5000}>
           <Balloon 
             borderColor="#2E86C1"
             backgroundColor="#D6EAF8"
@@ -75,18 +100,28 @@ const Easy = ({navigation}) => {
           >
             <Text style={styles.questionText}>{question.question}</Text>
           </Balloon>
+          </Animatable.View>
         </View>
         
-        {question.options.map((option, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.optionButton}
-            onPress={() => handleAnswer(option)}
-          >
-            <Text style={styles.optionText}>{option}</Text>
-          </TouchableOpacity>
-        ))}
-        {answerFeedback !== '' && <Text style={styles.feedbackText}>{answerFeedback}</Text>}
+        <View style={styles.imagesContainer}>
+          {question.images.map((image, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.imageButton}
+              onPress={() => handleAnswer(image.isCorrect)}
+            >
+              <Animatable.View animation="bounceIn" duration={2000}>
+                <Image source={image.source} style={styles.image} />
+              </Animatable.View>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {answerFeedback !== '' && (
+          <Animatable.View animation="fadeIn" duration={2000}>
+            <Text style={styles.feedbackText}>{answerFeedback}</Text>
+          </Animatable.View>
+        )}
       </View>
     );
   }
