@@ -4,29 +4,6 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 
-/*const questions = [
-  { question: 'Quanto é 7 + 5?', options: ['10', '11', '12'], correctAnswer: '12' },
-  { question: 'Quanto é 10 - 2?', options: ['6', '7', '8'], correctAnswer: '8' },
-  { question: 'Quanto é 3 x 4?', options: ['9', '10', '12'], correctAnswer: '12' },
-  { question: 'Quanto é 18 ÷ 3?', options: ['4', '6', '8'], correctAnswer: '6' },
-  { question: 'Quanto é 9 + 6?', options: ['13', '14', '15'], correctAnswer: '15' },
-  { question: 'Quanto é 5 - 1?', options: ['2', '3', '4'], correctAnswer: '4' },
-  { question: 'Quanto é 2 x 7?', options: ['12', '13', '14'], correctAnswer: '14' },
-  { question: 'Quanto é 15 ÷ 5?', options: ['2', '3', '4'], correctAnswer: '3' },
-  { question: 'Quanto é 11 + 9?', options: ['18', '19', '20'], correctAnswer: '20' },
-  { question: 'Quanto é 16 - 8?', options: ['6', '7', '8'], correctAnswer: '8' },
-  { question: 'Quanto é 2 + 3?', options: ['4', '5', '6'], correctAnswer: '5' },
-  { question: 'Quanto é 10 - 5?', options: ['3', '4', '5'], correctAnswer: '5' },
-  { question: 'Quanto é 4 x 3?', options: ['9', '10', '12'], correctAnswer: '12' },
-  { question: 'Quanto é 18 ÷ 6?', options: ['2', '3', '4'], correctAnswer: '3' },
-  { question: 'Quanto é 7 + 7?', options: ['12', '13', '14'], correctAnswer: '14' },
-  { question: 'Quanto é 9 - 3?', options: ['4', '5', '6'], correctAnswer: '6' },
-  { question: 'Quanto é 3 x 5?', options: ['13', '15', '17'], correctAnswer: '15' },
-  { question: 'Quanto é 20 ÷ 5?', options: ['2', '4', '5'], correctAnswer: '4' },
-  { question: 'Quanto é 8 + 6?', options: ['12', '13', '14'], correctAnswer: '14' },
-  { question: 'Quanto é 15 - 7?', options: ['7', '8', '9'], correctAnswer: '8' },
-];*/
-
 const questions = [
   {
     images: [
@@ -47,7 +24,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Toque na bolinha onde aparecem @4 @maçãs.',
+    question: 'Toque na bolinha onde aparecem @4 maçãs.',
     questionImage: null
   },
   {
@@ -69,7 +46,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é @6 @+ @10?',
+    question: 'Quanto é @6 + 10?',
     questionImage: null
   },
   {
@@ -91,7 +68,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Quanto é @10 @+ @4?',
+    question: 'Quanto é @10 + 4?',
     questionImage: null
   },
   {
@@ -109,11 +86,11 @@ const questions = [
         isCorrect: false
       },
       {
-        source: require('../../../assets/buttons/number11.png'),
+        source: require('../../../assets/buttons/number2.png'),
         isCorrect: true
       }
     ],
-    question: 'Quantas @rodas tem uma bicicleta?',
+    question: 'Quantas @rodas@ tem uma bicicleta?',
     questionImage: require('../../../assets/questionImages/bicicleta.png')
   },
   {
@@ -135,7 +112,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Quanto é @3 @+ @8?',
+    question: 'Quanto é @3 + 8?',
     questionImage: null
   },
   {
@@ -154,11 +131,99 @@ const questions = [
       },
       {
         source: require('../../../assets/buttons/number11.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Quanto é @8 + 4?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/fingers1.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/fingers7.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/fingers5.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/fingers3.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Quanto é @7 - 8?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number5.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number4.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
         isCorrect: true
       }
     ],
-    question: 'Quanto é @8 @+ @4?',
+    question: 'Quanto é @9 - 3?',
     questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number4.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number5.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Quanto é @7 - 2?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number3.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number4.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Quantas @pétalas@ tem a flor?',
+    questionImage: require('../../../assets/buttons/flower.png')
   }
   // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
@@ -183,7 +248,7 @@ const Easy = ({navigation}) => {
     
       if (correctAnswers >= 8) {
         navigation.navigate("Hard")
-      } else if (correctAnswers >= 1) {
+      } else if (correctAnswers >= 4) {
         navigation.navigate("Medium")
       } else {
         level = 'Nível não alcançado';
@@ -238,7 +303,7 @@ const Easy = ({navigation}) => {
         return null;
       }
      }
-
+     const imagesContainerStyle = question.questionImage == null ? styles.imagesContainer : styles.imagesContainerAlt;
     return (
       <View style={styles.container}>
          <Animatable.View animation="fadeIn" duration={3000}>
@@ -266,7 +331,7 @@ const Easy = ({navigation}) => {
         </View>
        
         
-        <View style={styles.imagesContainer}>
+        <View style={imagesContainerStyle}>
           {question.images.map((image, index) => (
             <TouchableOpacity
               key={index}

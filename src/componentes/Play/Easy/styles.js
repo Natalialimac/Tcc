@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection:'row',
-    flexWrap: 'wrap',
+    //flexDirection:'',
+    //flexWrap: 'wrap',
     //justifyContent: 'center',
     //alignItems: 'center',
     backgroundColor: '#855BAF',
@@ -14,9 +14,7 @@ const styles = StyleSheet.create({
     
   },
   balloon: {
-    position: 'absolute',
-    marginBottom: 20,
-    top: 0
+    bottom: '36%',
   },
   questionText: {
     fontSize: 18,
@@ -25,8 +23,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
-    position: 'absolute',
-    bottom: 5,
+    bottom:"5%",
+    flexDirection:'row',
+    justifyContent: 'center',             
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+  },
+  imagesContainerAlt:{
+    bottom: "50%",
     flexDirection:'row',
     justifyContent: 'center',             
     flexWrap: 'wrap',
@@ -37,7 +41,6 @@ const styles = StyleSheet.create({
     marginVertical: '1%', 
   },
   image: {
-
     borderRadius: 10,
   },
   feedbackText: {
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 10,
-    bottom:'100%'
+    bottom:'10%'
   },
   questionImage: {
     bottom: '150%',
