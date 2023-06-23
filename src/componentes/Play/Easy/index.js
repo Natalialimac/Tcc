@@ -41,9 +41,30 @@ const questions = [
       {
         source: require('../../../assets/buttons/3_limoes.png'),
         isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/2_macas.png'),
+        isCorrect: false
       }
     ],
-    question: 'Toque na bolinha onde aparecem 4 maçãs.'
+    question: 'Toque na bolinha onde aparecem @4 @maçãs.'
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Quanto é 4 + 4 ?'
   }
   // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
@@ -81,6 +102,41 @@ const Easy = ({navigation}) => {
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];
 
+    //Formata a dica em vermelho identificando palavras que começam com @
+    const CustomText = (props) => {
+      const arr = props.text.split(' ');
+       const reducer = (acc, cur, index) => {
+         let previousVal = acc[acc.length - 1];
+         if (
+           previousVal &&
+           previousVal.startsWith('@') &&
+           !previousVal.endsWith('@')
+         ) {
+           acc[acc.length - 1] = previousVal + ' ' + cur;
+         } else {
+           acc.push(cur);
+         }
+         return acc;
+       };
+     
+       const text = arr.reduce(reducer, []);
+     
+       return (
+         <Text>
+           {text.map((text) => {
+             if (text.startsWith('@')) {
+               return (
+                 <Text style={{color: '#FF0000' }}>
+                   {text.replaceAll('@', '')}{' '}
+                 </Text>
+               );
+             }
+             return `${text} `;
+           })}
+         </Text>
+       );
+     };
+
     return (
       <View style={styles.container}>
          <Animatable.View animation="fadeIn" duration={3000}>
@@ -98,7 +154,7 @@ const Easy = ({navigation}) => {
             triangleDirection='bottom'
             triangleOffset='23%'
           >
-            <Text style={styles.questionText}>{question.question}</Text>
+          <Text style={styles.questionText}><CustomText text= {question.question}/></Text>
           </Balloon>
           </Animatable.View>
         </View>

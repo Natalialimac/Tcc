@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   balloon: {
-    position: 'flex',
+    display: 'flex',
     top: 0,
     marginBottom: 20,
   },

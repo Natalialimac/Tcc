@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#855BAF',
   },
   tonyStyle: {
-    //width: 150,
-    //height: 150,
-    marginBottom: 20,
+    top: '55%',
+    right: '30%'
   },
   balloon: {
     marginBottom: 20,
+    bottom: '35%'
   },
   questionText: {
     fontSize: 18,
@@ -22,21 +22,19 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginHorizontal: 20,
-    marginBottom: 20,
+    bottom: '10%',
+    display: 'flex',
+    flexDirection:'row',
+    justifyContent: 'center',             
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
   },
   imageButton: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
+    marginHorizontal: '5%',
+    marginVertical: '1%', 
   },
   image: {
-    //width: 100,
-    //height: 10,
+
     borderRadius: 10,
   },
   feedbackText: {
@@ -44,6 +42,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 10,
+    bottom:'100%'
   },
 }); 
 
