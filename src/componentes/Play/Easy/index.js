@@ -47,24 +47,118 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Toque na bolinha onde aparecem @4 @maçãs.'
+    question: 'Toque na bolinha onde aparecem @4 @maçãs.',
+    questionImage: null
   },
   {
     images: [
       {
-        source: require('../../../assets/buttons/number1.png'),
+        source: require('../../../assets/buttons/number12.png'),
         isCorrect: false
       },
       {
-        source: require('../../../assets/buttons/number8.png'),
+        source: require('../../../assets/buttons/number16.png'),
         isCorrect: true
       },
       {
-        source: require('../../../assets/buttons/number2.png'),
+        source: require('../../../assets/buttons/number18.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number10.png'),
         isCorrect: false
       }
     ],
-    question: 'Quanto é 4 + 4 ?'
+    question: 'Quanto é @6 @+ @10?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number18.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number15.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number13.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number14.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é @10 @+ @4?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number9.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number7.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quantas @rodas tem uma bicicleta?',
+    questionImage: require('../../../assets/questionImages/bicicleta.png')
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number9.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number7.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é @3 @+ @8?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number19.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number12.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number17.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Quanto é @8 @+ @4?',
+    questionImage: null
   }
   // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
@@ -137,6 +231,14 @@ const Easy = ({navigation}) => {
        );
      };
 
+     const QuestionHasImage = ()=>{
+      if (question.questionImage != null){
+        return <Image source={question.questionImage} style={styles.questionImage}></Image>
+      }else{
+        return null;
+      }
+     }
+
     return (
       <View style={styles.container}>
          <Animatable.View animation="fadeIn" duration={3000}>
@@ -158,6 +260,11 @@ const Easy = ({navigation}) => {
           </Balloon>
           </Animatable.View>
         </View>
+        
+        <View>
+          <QuestionHasImage/>
+        </View>
+       
         
         <View style={styles.imagesContainer}>
           {question.images.map((image, index) => (

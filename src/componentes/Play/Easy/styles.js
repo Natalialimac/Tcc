@@ -3,17 +3,20 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection:'row',
+    flexWrap: 'wrap',
+    //justifyContent: 'center',
+    //alignItems: 'center',
     backgroundColor: '#855BAF',
   },
   tonyStyle: {
-    top: '55%',
-    right: '30%'
+    top: '50%',
+    
   },
   balloon: {
+    position: 'absolute',
     marginBottom: 20,
-    bottom: '35%'
+    top: 0
   },
   questionText: {
     fontSize: 18,
@@ -22,8 +25,8 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
-    bottom: '10%',
-    display: 'flex',
+    position: 'absolute',
+    bottom: 5,
     flexDirection:'row',
     justifyContent: 'center',             
     flexWrap: 'wrap',
@@ -44,6 +47,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     bottom:'100%'
   },
+  questionImage: {
+    bottom: '150%',
+    left: '50%',
+    resizeMode:'contain',
+    width: 150,
+    height:150
+  }
 }); 
 
 export default styles;
