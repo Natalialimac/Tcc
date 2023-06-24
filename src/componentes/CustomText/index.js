@@ -3,7 +3,7 @@ import { Text } from 'react-native-animatable';
 
 const CustomText = (props) => {
     const arr = props.text.split(' ');
-     const reducer = (acc, cur, index) => {
+     const reducer = (acc, cur) => {
        let previousVal = acc[acc.length - 1];
        if (
          previousVal &&

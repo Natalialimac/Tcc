@@ -248,8 +248,6 @@ const Easy = ({navigation}) => {
       let level = '';
     
       if (correctAnswers >= 8) {
-        navigation.navigate("Hard")
-      } else if (correctAnswers >= 4) {
         navigation.navigate("Medium")
       } else {
         level = 'Nível não alcançado';
