@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
+import CustomText from '../../CustomText';
 
 // 10 questões
 const questions = [
@@ -21,7 +22,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é 4 + 4 ?'
+    question: 'Quanto é @4 + 4 ?'
   },
   {
     images: [
@@ -38,7 +39,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Oi amiguinho, clique no símbolo da divisão'
+    question: 'Oi amiguinho, @clique no símbolo da divisão'
   },
   {
     images: [
@@ -55,7 +56,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é 4 - 3 ?'
+    question: 'Quanto é @4 - 3 ?'
   },
   {
     images: [
@@ -72,7 +73,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Quanto é 4 - 2 ?'
+    question: 'Quanto é @4 - 2 ?'
   },
   {
     images: [
@@ -89,7 +90,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é 8 / 2?'
+    question: 'Quanto é @8 / 2?'
   },
   {
     images: [
@@ -106,7 +107,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Qual número vem depois de 6?'
+    question: 'Qual @número vem depois de 6?'
   },
   {
     images: [
@@ -123,7 +124,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é 3 * 4 + 4 ?'
+    question: 'Quanto é @3 * 4 + 4 ?'
   },
   {
     images: [
@@ -140,7 +141,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Clique no mão com o número 3'
+    question: 'Clique no mão com o @número 3'
   },
   {
     images: [
@@ -157,7 +158,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é 5 * 5 - 6?'
+    question: 'Quanto é @5 * 5 - 6?'
   },
   {
     images: [
@@ -174,7 +175,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Quanto é 20 / 10 * 2 ?'
+    question: 'Quanto é @20 / 10 * 2 ?'
   },
 ];
 
@@ -234,7 +235,7 @@ const Leveling = ({ navigation }) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
-              <Text style={styles.questionText}>{question.question}</Text>
+              <Text style={styles.questionText}><CustomText text= {question.question}/></Text>
             </Balloon>
           </Animatable.View>
         </View>
