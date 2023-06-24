@@ -224,7 +224,7 @@ const Leveling = ({ navigation }) => {
         </Animatable.View>
 
         <View style={styles.balloon}>
-          <Animatable.View animation="fadeIn" duration={5000}>
+          <Animatable.View animation="fadeIn" duration={3000}>
             <Balloon
               borderColor="#2E86C1"
               backgroundColor="#D6EAF8"

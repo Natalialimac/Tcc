@@ -11,10 +11,10 @@ const styles = StyleSheet.create({
   },
   tonyStyle: {
     top: '50%',
-    
   },
   balloon: {
-    bottom: '36%',
+    //display: 'flex',
+    bottom: '25%',
   },
   questionText: {
     fontSize: 18,
@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
-    bottom:"5%",
+    bottom:"1%",
     flexDirection:'row',
     justifyContent: 'center',             
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
   },
   imagesContainerAlt:{
-    bottom: "50%",
+    bottom: "30%",
     flexDirection:'row',
     justifyContent: 'center',             
     flexWrap: 'wrap',
