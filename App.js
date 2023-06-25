@@ -9,6 +9,7 @@ import Medium from './src/componentes/Play/Medium/index.js';
 import Easy from './src/componentes/Play/Easy/index.js';
 import FeedbackYes from './src/componentes/Feedback/FeedbackYes.js';
 import FeedbackNo from './src/componentes/Feedback/FeedbackNo.js';
+import Store from './src/componentes/Store/index.js';
 
 const Stack = createStackNavigator();
 
@@ -18,13 +19,14 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
-        <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: false }}/>
-        <Stack.Screen name="Hard" component={Hard} />
-        <Stack.Screen name="Easy" component={Easy} />
-        <Stack.Screen name="Medium" component={Medium} />
-        <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: false }}/>
-        <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: false }}/>
-        
+        <Stack.Screen name="Store" component={Store} options={{ headerShown: false }} />
+        <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: false }} />
+        <Stack.Screen name="Hard" component={Hard} options={{ headerShown: false }} />
+        <Stack.Screen name="Easy" component={Easy} options={{ headerShown: false }} />
+        <Stack.Screen name="Medium" component={Medium} options={{ headerShown: false }} />
+        <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: false }} />
+        <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: false }} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
