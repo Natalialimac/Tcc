@@ -1,37 +1,70 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#855BAF',
-  },
-  buttonContainer: {
-    position: 'absolute',
-    bottom: 180,
-  },
-  button: {
-    backgroundColor: '#FFED46',
-    borderRadius: 30,
-    width: 300,
-    height: 50,
-    marginBottom: 10,
+    paddingTop: '30%',
+    paddingHorizontal: 15,
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative',
   },
-  button2: {
-    marginTop: 15,
-  },
-  buttonText: {
-    fontSize: 18,
+  storeTitle: {
+    fontSize: 30,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'white',
+    marginBottom: 50
   },
-  logo: {
+  scrollContainer: {
     flex: 1,
-    resizeMode: 'cover',
+  },
+  itemContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#C6C5FD',
+    borderRadius: Dimensions.get('window').width * 0.3,
+    marginBottom: 20,
+  },
+  itemImage: {
+    aspectRatio: 1,
+    marginRight: 10,
+  },
+  itemTextContainer: {
+    backgroundColor: '#250546',
+    alignItems: 'center',
+    marginTop: 10,
+    width: '100%',
+    height: Dimensions.get('window').height * 0.15,
+    justifyContent: 'center',
+  },
+  itemText: {
+    fontSize: 25,
+    color: 'white',
+  },
+  itemStars: {
+    fontSize: 14,
+    color: 'white',
+  },
+  pointsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '10%',
+    right: 20,
+    backgroundColor: '#2E86C1',
+    padding: 10,
+    borderRadius: 10,
+  },
+  pointsText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginRight: 5,
+  },
+  lottieAnimation: {
+    width: 30,
+    height: '100%',
   },
 });
-
-export default styles;
