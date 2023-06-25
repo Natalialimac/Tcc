@@ -33,7 +33,7 @@ const questions = [
     images: [
       {
         source: require('../../../assets/buttons/number8.png'),
-        isCorrect: true
+        isCorrect: false
       },
       {
         source: require('../../../assets/buttons/number4.png'),

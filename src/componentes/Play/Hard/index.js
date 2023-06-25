@@ -4,50 +4,229 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import LottieView from 'lottie-react-native';
 import * as Animatable from 'react-native-animatable';
+import CustomText from '../../CustomText';
 
 const questions = [
-  { question: 'Quanto é 367 + 529?', options: ['796', '876', '896'], correctAnswer: '896' },
-  { question: 'Quanto é 983 - 459?', options: ['524', '524', '524'], correctAnswer: '524' },
-  { question: 'Quanto é 27 x 54?', options: ['1458', '1478', '1568'], correctAnswer: '1458' },
-  { question: 'Quanto é 641 ÷ 23?', options: ['27', '28', '29'], correctAnswer: '27' },
-  { question: 'Quanto é 865 + 329?', options: ['1194', '1196', '1198'], correctAnswer: '1194' },
-  { question: 'Quanto é 724 - 384?', options: ['340', '340', '340'], correctAnswer: '340' },
-  { question: 'Quanto é 36 x 79?', options: ['2844', '2894', '2964'], correctAnswer: '2844' },
-  { question: 'Quanto é 1152 ÷ 16?', options: ['64', '68', '72'], correctAnswer: '72' },
-  { question: 'Quanto é 238 + 496?', options: ['724', '734', '744'], correctAnswer: '734' },
-  { question: 'Quanto é 689 - 267?', options: ['422', '422', '422'], correctAnswer: '422' },
-  { question: 'Quanto é 46 x 78?', options: ['3588', '3588', '3588'], correctAnswer: '3588' },
-  { question: 'Quanto é 2104 ÷ 28?', options: ['74', '74', '74'], correctAnswer: '74' },
-  { question: 'Quanto é 897 + 642?', options: ['1539', '1559', '1579'], correctAnswer: '1539' },
-  { question: 'Quanto é 871 - 354?', options: ['517', '517', '517'], correctAnswer: '517' },
-  { question: 'Quanto é 53 x 86?', options: ['4558', '4558', '4558'], correctAnswer: '4558' },
-  { question: 'Quanto é 2584 ÷ 19?', options: ['136', '136', '136'], correctAnswer: '136' },
-  { question: 'Quanto é 438 + 932?', options: ['1370', '1370', '1370'], correctAnswer: '1370' },
-  { question: 'Quanto é 749 - 536?', options: ['213', '213', '213'], correctAnswer: '213' },
-  { question: 'Quanto é 49 x 72?', options: ['3528', '3528', '3528'], correctAnswer: '3528' },
-  { question: 'Quanto é 2156 ÷ 28?', options: ['77', '77', '77'], correctAnswer: '77' },
-  { question: 'Quanto é 638 + 942?', options: ['1580', '1580', '1580'], correctAnswer: '1580' },
-  { question: 'Quanto é 593 - 228?', options: ['365', '365', '365'], correctAnswer: '365' },
-  { question: 'Quanto é 84 x 91?', options: ['7664', '7664', '7664'], correctAnswer: '7664' },
-  { question: 'Quanto é 3142 ÷ 23?', options: ['136', '136', '136'], correctAnswer: '136' },
-  { question: 'Quanto é 837 + 1279?', options: ['2116', '2116', '2116'], correctAnswer: '2116' },
-  { question: 'Quanto é 957 - 378?', options: ['579', '579', '579'], correctAnswer: '579' },
-  { question: 'Quanto é 69 x 98?', options: ['6762', '6762', '6762'], correctAnswer: '6762' },
-  { question: 'Quanto é 3925 ÷ 25?', options: ['157', '157', '157'], correctAnswer: '157' },
-  { question: 'Quanto é 578 + 1843?', options: ['2421', '2421', '2421'], correctAnswer: '2421' },
-  { question: 'Quanto é 763 - 447?', options: ['316', '316', '316'], correctAnswer: '316' },
-  { question: 'Quanto é 67 x 77?', options: ['5159', '5159', '5159'], correctAnswer: '5159' },
-  { question: 'Quanto é 2676 ÷ 18?', options: ['148', '148', '148'], correctAnswer: '148' },
-  { question: 'Quanto é 937 + 1756?', options: ['2693', '2693', '2693'], correctAnswer: '2693' },
-  { question: 'Quanto é 1321 - 656?', options: ['665', '665', '665'], correctAnswer: '665' },
-  { question: 'Quanto é 87 x 95?', options: ['8265', '8265', '8265'], correctAnswer: '8265' },
-  { question: 'Quanto é 4212 ÷ 14?', options: ['301', '301', '301'], correctAnswer: '301' },
-  { question: 'Quanto é 872 + 2187?', options: ['3059', '3059', '3059'], correctAnswer: '3059' },
-  { question: 'Quanto é 1239 - 872?', options: ['367', '367', '367'], correctAnswer: '367' },
-  { question: 'Quanto é 74 x 88?', options: ['6512', '6512', '6512'], correctAnswer: '6512' },
-  { question: 'Quanto é 4862 ÷ 17?', options: ['286', '286', '286'], correctAnswer: '286' },
-  { question: 'Quanto é 912 + 2436?', options: ['3348', '3348', '3348'], correctAnswer: '3348' },
-  { question: 'Quanto é 1945 - 786?', options: ['1159', '1159', '1159'], correctAnswer: '1159' },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number5.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number1.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Um cesto tem @6 laranjas@ que devem ser divididas entre @5 pessoas.@ Porém, @1 laranja@ deve permanecer no cesto. Quantas laranjas cada pessoa receberá?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number3.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number6.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number4.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number5.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Ao entrar no carro, o motorista encontrou @4 passageiros.@ Depois, @2 desceram@ e @1 subiu.@ Quantas pessoas ficaram no carro?',
+    questionImage: require('../../../assets/questionImages/car.png')
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number3.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number2.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number3.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number4.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Um trem leva @1 hora@ para ir de uma cidade à outra, mas para voltar leva @2 horas.@ Quantas horas leva essa @viagem completa?@',
+    questionImage: require('../../../assets/questionImages/train.png')
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number25.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number22.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number27.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number26.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Em um ônibus, viajam @18 passageiros@ e o motorista. Na próxima parada @descem 5@ pessoas, mas outras @13 sobem.@ Quantas pessoas ficaram no ônibus?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number8.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number12.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number9.png'),
+        isCorrect: true
+      }
+    ],
+    question: 'Um carrossel pode levar @24 crianças.@ Se @15 crianças@ já estão no carrossel, quantas ainda podem entrar?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number22.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number20.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number18.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number19.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'O irmão de Luana, é @5 anos mais velho@ do que ela. O irmão de Luana tem @25 anos.@ Quantos anos Luana tem?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number30.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number50.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number20.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number40.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Em um muro, uma aranha sobe @5 metros em 10 minutos.@ Quantos metros ela consegue subir em @40 minutos?@',
+    questionImage: require('../../../assets/questionImages/spider.png')
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number9.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number7.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number14.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number12.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Um casal tem @6 filhos homens@ e @cada filho tem uma irmã.@ Quantas pessoas há nessa família no total?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/number11.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number15.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/number10.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/number30.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Luan passou @um terço do mês de abril@ na praia. Quantos dias ele passou lá?',
+    questionImage: null
+  },
+  {
+    images: [
+      {
+        source: require('../../../assets/buttons/hours22.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/hours2.png'),
+        isCorrect: false
+      },
+      {
+        source: require('../../../assets/buttons/hours23.png'),
+        isCorrect: true
+      },
+      {
+        source: require('../../../assets/buttons/hours21.png'),
+        isCorrect: false
+      }
+    ],
+    question: 'Pedro olhou para seu despertador e disse: \"Daqui a @6 horas@ será @4 horas@ da manhã.\" A que horas Pedro olhou para o despertador?',
+    questionImage: null
+  },
 ];
 
 const Hard = ({ navigation, route }) => {
@@ -59,8 +238,8 @@ const Hard = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
-  const handleAnswer = (selectedAnswer) => {
-    if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+  const handleAnswer = (isCorrect) => {
+    if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
       navigation.navigate("FeedbackYes");
     } else {
@@ -82,6 +261,14 @@ const Hard = ({ navigation, route }) => {
 
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];
+    const QuestionHasImage = () => {
+      if (question.questionImage != null) {
+        return <Image source={question.questionImage} style={styles.questionImage}></Image>
+      } else {
+        return null;
+      }
+    }
+    const imagesContainerStyle = question.questionImage == null ? styles.imagesContainer : styles.imagesContainerAlt;
 
     return (
       <View style={styles.container}>
@@ -94,34 +281,48 @@ const Hard = ({ navigation, route }) => {
         </Animatable.View>
 
         <View style={styles.balloon}>
-          <Balloon
-            borderColor="#2E86C1"
-            backgroundColor="#D6EAF8"
-            borderWidth={2}
-            borderRadius={20}
-            triangleSize={15}
-            triangleDirection='bottom'
-            triangleOffset='23%'
-          >
-            <Text style={styles.questionText}>{question.question}</Text>
-          </Balloon>
+          <Animatable.View animation="fadeIn" duration={1000}>
+            <Balloon
+              borderColor="#2E86C1"
+              backgroundColor="#D6EAF8"
+              borderWidth={2}
+              borderRadius={20}
+              triangleSize={15}
+              triangleDirection='bottom'
+              triangleOffset='23%'
+            >
+              <Text style={styles.questionText}><CustomText text={question.question} /></Text>
+            </Balloon>
+          </Animatable.View>
         </View>
 
-        {question.options.map((option, index) => (
-          <TouchableOpacity
-            key={index}
-            style={styles.optionButton}
-            onPress={() => handleAnswer(option)}
-          >
-            <Text style={styles.optionText}>{option}</Text>
-          </TouchableOpacity>
-        ))}
-        {answerFeedback !== '' && <Text style={styles.feedbackText}>{answerFeedback}</Text>}
+        <View>
+          <QuestionHasImage />
+        </View>
+
+        <View style={imagesContainerStyle}>
+          {question.images.map((image, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.imageButton}
+              onPress={() => handleAnswer(image.isCorrect)}
+            >
+              <Animatable.View animation="bounceIn" duration={2000}>
+                <Image source={image.source} style={styles.image} />
+              </Animatable.View>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {answerFeedback !== '' && (
+          <Animatable.View animation="fadeIn" duration={2000}>
+            <Text style={styles.feedbackText}>{answerFeedback}</Text>
+          </Animatable.View>
+        )}
       </View>
     );
   }
 
   return null;
 };
-
 export default Hard;
