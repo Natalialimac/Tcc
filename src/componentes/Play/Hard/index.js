@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
+import LottieView from 'lottie-react-native';
+import * as Animatable from 'react-native-animatable';
 
 const questions = [
   { question: 'Quanto é 367 + 529?', options: ['796', '876', '896'], correctAnswer: '896' },
@@ -48,11 +50,14 @@ const questions = [
   { question: 'Quanto é 1945 - 786?', options: ['1159', '1159', '1159'], correctAnswer: '1159' },
 ];
 
-const Hard = ({ navigation }) => {
+const Hard = ({ navigation, route }) => {
+  const { correctAnswers: previousCorrectAnswers } = route.params;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
+
+  const countOk = correctAnswers + previousCorrectAnswers;
 
   const handleAnswer = (selectedAnswer) => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
@@ -80,7 +85,13 @@ const Hard = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
-        <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
+        <View style={styles.pointsContainer}>
+          <Text style={styles.pointsText}>{countOk}</Text>
+          <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
+        </View>
+        <Animatable.View animation="fadeIn" duration={1000}>
+          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
+        </Animatable.View>
 
         <View style={styles.balloon}>
           <Balloon

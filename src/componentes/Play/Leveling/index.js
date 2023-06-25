@@ -197,11 +197,11 @@ const Leveling = ({ navigation }) => {
       let level = '';
 
       if (correctAnswers >= 8) {
-        navigation.navigate("Hard");
+        navigation.navigate("Hard", { correctAnswers });
       } else if (correctAnswers >= 5) {
-        navigation.navigate("Medium");
+        navigation.navigate("Medium", { correctAnswers });
       } else if (correctAnswers >= 2) {
-        navigation.navigate("Easy");
+        navigation.navigate("Easy", { correctAnswers });
       } else {
         level = 'Nível não alcançado';
       }

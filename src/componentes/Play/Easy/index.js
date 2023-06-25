@@ -4,6 +4,7 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
+import LottieView from 'lottie-react-native';
 
 const questions = [
   {
@@ -230,11 +231,14 @@ const questions = [
 ];
 
 
-const Easy = ({ navigation }) => {
-
+const Easy = ({ navigation, route }) => {
+  const { correctAnswers: previousCorrectAnswers } = route.params;
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
+
+  const countOk = correctAnswers + previousCorrectAnswers;
 
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
@@ -248,7 +252,7 @@ const Easy = ({ navigation }) => {
       let level = '';
 
       if (correctAnswers >= 8) {
-        navigation.navigate("Medium")
+        navigation.navigate("Medium", {correctAnswers: countOk})
       } else {
         level = 'Nível não alcançado';
       }
@@ -270,6 +274,10 @@ const Easy = ({ navigation }) => {
     const imagesContainerStyle = question.questionImage == null ? styles.imagesContainer : styles.imagesContainerAlt;
     return (
       <View style={styles.container}>
+        <View style={styles.pointsContainer}>
+          <Text style={styles.pointsText}>{countOk}</Text>
+          <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
+        </View>
         <Animatable.View animation="fadeIn" duration={1000}>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
