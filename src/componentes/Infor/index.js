@@ -31,7 +31,7 @@ const ChildInfoScreen = ({ navigation }) => {
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <Text style={styles.tigerText}>Olá amiguinho!</Text>
+      <Text style={styles.tigerText}>Olá amiguinho! Ops, {name}</Text>
 
       <LottieView
         source={require('../../assets/tiger.json')}
