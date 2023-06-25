@@ -92,7 +92,7 @@ const questions = [
       }
     ],
     question: 'Quantas @rodas@ tem uma bicicleta?',
-    questionImage: require('../../../assets/questionImages/bicicleta.png')
+    questionImage: require('../../../assets/questionImages/bike.png')
   },
   {
     images: [
@@ -224,7 +224,7 @@ const questions = [
       }
     ],
     question: 'Quantas @pétalas@ tem a flor?',
-    questionImage: require('../../../assets/buttons/flower.png')
+    questionImage: require('../../../assets/questionImages/flower.png')
   }
   // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
