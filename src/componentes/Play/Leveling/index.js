@@ -4,6 +4,7 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
+import LottieView from 'lottie-react-native';
 
 // 10 questões
 const questions = [
@@ -220,6 +221,11 @@ const Leveling = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
+        {/* Componente para exibir a contagem de pontos */}
+        <View style={styles.pointsContainer}>
+          <Text style={styles.pointsText}>{correctAnswers}</Text>
+          <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
+        </View>
         <Animatable.View animation="fadeIn" duration={1000}>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
