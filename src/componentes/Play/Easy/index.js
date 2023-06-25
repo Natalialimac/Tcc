@@ -227,7 +227,6 @@ const questions = [
     question: 'Quantas @pétalas@ tem a flor?',
     questionImage: require('../../../assets/questionImages/flower.png')
   }
-  // Adicione outras perguntas com imagens e respostas corretas correspondentes
 ];
 
 
@@ -298,7 +297,8 @@ const Easy = ({ navigation, route }) => {
           </Animatable.View>
         </View>
 
-        <View>
+        <View> 
+
           <QuestionHasImage />
         </View>
 

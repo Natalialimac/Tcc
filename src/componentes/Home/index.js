@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Leveling")}
+          onPress={() => navigation.navigate("ChildInfoScreen")}
         >
           <Text style={styles.buttonText}>Clique aqui para começar</Text>
         </TouchableOpacity>

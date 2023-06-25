@@ -6,38 +6,34 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#855BAF',
+    paddingHorizontal: 20,
   },
   animation: {
-    width: 400,
-    height: 400,
-    marginBottom: 1,
+    width: 200,
+    height: 200,
+    marginBottom: 20,
   },
   title: {
+    color: 'white',
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 16,
-    color: 'white',
+    marginBottom: 50,
   },
-  message: {
-    fontSize: 18,
-    marginBottom: 24,
+  subtitle: {
     color: 'white',
+    fontSize: 20,
+    marginBottom: 70,
   },
   button: {
-    backgroundColor: '#2E86C1',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
+    backgroundColor: '#FFED46D9',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
   },
   buttonText: {
-    color: '#000',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
-  },
-  highlightedButton: {
-    backgroundColor: '#FFD700',
-    borderWidth: 3, 
-    borderColor: '#FFD700',
   },
 });
 

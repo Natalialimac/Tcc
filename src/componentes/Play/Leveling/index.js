@@ -6,7 +6,6 @@ import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
 import LottieView from 'lottie-react-native';
 
-// 10 questões
 const questions = [
   {
     images: [

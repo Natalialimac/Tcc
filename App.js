@@ -10,6 +10,8 @@ import Easy from './src/componentes/Play/Easy/index.js';
 import FeedbackYes from './src/componentes/Feedback/FeedbackYes.js';
 import FeedbackNo from './src/componentes/Feedback/FeedbackNo.js';
 import Store from './src/componentes/Store/index.js';
+import ChildInfoScreen from './src/componentes/Infor/index.js';
+import WelcomeScreen from './src/componentes/Welcome/index.js';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +28,8 @@ export default function App() {
         <Stack.Screen name="Medium" component={Medium} options={{ headerShown: false }} />
         <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: false }} />
         <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: false }} />
-
+        <Stack.Screen name="ChildInfoScreen" component={ChildInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

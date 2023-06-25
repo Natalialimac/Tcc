@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
       top: '50%',
     },
     balloon: {
-      //display: 'flex',
       bottom: '25%',
     },
     questionText: {

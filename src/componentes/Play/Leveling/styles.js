@@ -29,12 +29,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   imagesContainerAlt: {
-    //flexDirection: 'row-reverse',
-    //justifyContent: 'space-between',
-    //alignItems: 'center',
-    //marginHorizontal: 20,
     marginBottom: 20,
-    //transform: [{ rotate: '90deg' }],
   },
   imageButton: {
     justifyContent: 'center',
