@@ -7,7 +7,7 @@ const WelcomeScreen = ({ navigation, route }) => {
   const { name, age } = route.params;
 
   const handleStart = () => {
-    navigation.navigate('Leveling');
+    navigation.navigate('Leveling', { name });
   };
 
   return (

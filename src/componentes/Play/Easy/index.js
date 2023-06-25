@@ -231,7 +231,7 @@ const questions = [
 
 
 const Easy = ({ navigation, route }) => {
-  const { correctAnswers: previousCorrectAnswers } = route.params;
+  const { correctAnswers: previousCorrectAnswers, name } = route.params;
   
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -242,9 +242,9 @@ const Easy = ({ navigation, route }) => {
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
-      navigation.navigate("FeedbackYes");
+      navigation.navigate("FeedbackYes", {name});
     } else {
-      navigation.navigate("FeedbackNo");
+      navigation.navigate("FeedbackNo", {name});
     }
 
     if (currentQuestion + 1 === questions.length) {

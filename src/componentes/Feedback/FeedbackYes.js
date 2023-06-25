@@ -4,7 +4,9 @@ import LottieView from 'lottie-react-native';
 import * as Animatable from 'react-native-animatable';
 import styles from './styles';
 
-const FeedbackYes = ({ navigation }) => {
+const FeedbackYes = ({ navigation, route }) => {
+    const { name } = route.params;
+
     const animationRef = useRef(null);
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const FeedbackYes = ({ navigation }) => {
             />
             <Animatable.View animation="fadeIn" duration={5000}>
                 <Text style={styles.title}>Parabéns!</Text>
-                <Text style={styles.message}>Muito bem, você foi incrível! Vamos continuar.</Text>
+                <Text style={styles.message}>Muito bem {name}, você foi incrível! Vamos continuar.</Text>
             </Animatable.View>
 
             <TouchableOpacity

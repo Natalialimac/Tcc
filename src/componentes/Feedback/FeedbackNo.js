@@ -4,7 +4,9 @@ import LottieView from 'lottie-react-native';
 import * as Animatable from 'react-native-animatable';
 import styles from './styles';
 
-const FeedbackNo = ({ navigation }) => {
+const FeedbackNo = ({ navigation, route }) => {
+  const { name } = route.params;
+
   const animationRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ const FeedbackNo = ({ navigation }) => {
         loop={true}
       />
       <Animatable.View animation="fadeIn" duration={5000}>
-        <Text style={styles.title}>Olá, amiguinho! Você está sendo muito incrível. Porém, desta vez você errou.</Text>
+        <Text style={styles.title}>Olá, {name}! Você está sendo muito incrível. Porém, desta vez você errou.</Text>
         <Text style={styles.message}>Dica: Fique bem atento às palavras em destaque.</Text>
       </Animatable.View>
 

@@ -179,7 +179,9 @@ const questions = [
   },
 ];
 
-const Leveling = ({ navigation }) => {
+const Leveling = ({ navigation, route }) => {
+  const { name } = route.params;
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
@@ -187,9 +189,9 @@ const Leveling = ({ navigation }) => {
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
-      navigation.navigate("FeedbackYes");
+      navigation.navigate("FeedbackYes", {name});
     } else {
-      navigation.navigate("FeedbackNo");
+      navigation.navigate("FeedbackNo", {name});
     }
 
     if (currentQuestion + 1 === questions.length) {
