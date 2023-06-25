@@ -7,6 +7,8 @@ import Leveling from './src/componentes/Play/Leveling/index.js';
 import Hard from './src/componentes/Play/Hard/index.js';
 import Medium from './src/componentes/Play/Medium/index.js';
 import Easy from './src/componentes/Play/Easy/index.js';
+import FeedbackYes from './src/componentes/Feedback/FeedbackYes.js';
+import FeedbackNo from './src/componentes/Feedback/FeedbackNo.js';
 
 const Stack = createStackNavigator();
 
@@ -15,11 +17,14 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="Leveling" component={Leveling} />
+        <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
+        <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: false }}/>
         <Stack.Screen name="Hard" component={Hard} />
         <Stack.Screen name="Easy" component={Easy} />
         <Stack.Screen name="Medium" component={Medium} />
+        <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: false }}/>
+        <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: false }}/>
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -57,9 +57,9 @@ const Hard = ({navigation}) => {
   const handleAnswer = (selectedAnswer) => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setCorrectAnswers(correctAnswers + 1);
-      setAnswerFeedback('Parabéns! Você acertou!');
+      navigation.navigate("FeedbackYes");
     } else {
-      setAnswerFeedback('Ops! Você errou!');
+      navigation.navigate("FeedbackNo");
     }
 
     if (currentQuestion + 1 === questions.length) {
