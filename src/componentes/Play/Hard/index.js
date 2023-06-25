@@ -48,8 +48,8 @@ const questions = [
   { question: 'Quanto é 1945 - 786?', options: ['1159', '1159', '1159'], correctAnswer: '1159' },
 ];
 
-const Hard = ({navigation}) => {
- 
+const Hard = ({ navigation }) => {
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
@@ -64,14 +64,14 @@ const Hard = ({navigation}) => {
 
     if (currentQuestion + 1 === questions.length) {
       let level = '';
-    
+
       if (correctAnswers == 8) {
         navigation.navigate("Hard")
       } else {
         level = 'Nível não alcançado';
       }
     }
-    
+
     setCurrentQuestion(currentQuestion + 1);
   };
 
@@ -80,10 +80,10 @@ const Hard = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-        <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle}/>
-        
+        <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
+
         <View style={styles.balloon}>
-          <Balloon 
+          <Balloon
             borderColor="#2E86C1"
             backgroundColor="#D6EAF8"
             borderWidth={2}
@@ -95,7 +95,7 @@ const Hard = ({navigation}) => {
             <Text style={styles.questionText}>{question.question}</Text>
           </Balloon>
         </View>
-        
+
         {question.options.map((option, index) => (
           <TouchableOpacity
             key={index}

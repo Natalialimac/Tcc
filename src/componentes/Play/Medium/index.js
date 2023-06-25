@@ -178,7 +178,7 @@ const questions = [
   },
 ];
 
-const Medium = ({navigation}) => {
+const Medium = ({ navigation }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
@@ -219,12 +219,12 @@ const Medium = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-        <Animatable.View animation="fadeIn" duration={3000}>
+        <Animatable.View animation="fadeIn" duration={1000}>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
 
         <View style={styles.balloon}>
-          <Animatable.View animation="fadeIn" duration={3000}>
+          <Animatable.View animation="fadeIn" duration={1000}>
             <Balloon
               borderColor="#2E86C1"
               backgroundColor="#D6EAF8"
@@ -234,7 +234,7 @@ const Medium = ({navigation}) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
-              <Text style={styles.questionText}><CustomText text= {question.question}/></Text>
+              <Text style={styles.questionText}><CustomText text={question.question} /></Text>
             </Balloon>
           </Animatable.View>
         </View>

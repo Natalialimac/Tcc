@@ -230,8 +230,8 @@ const questions = [
 ];
 
 
-const Easy = ({navigation}) => {
- 
+const Easy = ({ navigation }) => {
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
@@ -246,55 +246,55 @@ const Easy = ({navigation}) => {
 
     if (currentQuestion + 1 === questions.length) {
       let level = '';
-    
+
       if (correctAnswers >= 8) {
         navigation.navigate("Medium")
       } else {
         level = 'Nível não alcançado';
       }
     }
-    
+
     setCurrentQuestion(currentQuestion + 1);
   };
 
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];
 
-     const QuestionHasImage = ()=>{
-      if (question.questionImage != null){
+    const QuestionHasImage = () => {
+      if (question.questionImage != null) {
         return <Image source={question.questionImage} style={styles.questionImage}></Image>
-      }else{
+      } else {
         return null;
       }
-     }
-     const imagesContainerStyle = question.questionImage == null ? styles.imagesContainer : styles.imagesContainerAlt;
+    }
+    const imagesContainerStyle = question.questionImage == null ? styles.imagesContainer : styles.imagesContainerAlt;
     return (
       <View style={styles.container}>
-         <Animatable.View animation="fadeIn" duration={3000}>
-          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle}/>
+        <Animatable.View animation="fadeIn" duration={1000}>
+          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
-        
+
         <View style={styles.balloon}>
-        <Animatable.View animation="fadeIn" duration={3000}>
-          <Balloon 
-            borderColor="#2E86C1"
-            backgroundColor="#D6EAF8"
-            borderWidth={2}
-            borderRadius={20}
-            triangleSize={15}
-            triangleDirection='bottom'
-            triangleOffset='23%'
-          >
-          <Text style={styles.questionText}><CustomText text= {question.question}/></Text>
-          </Balloon>
+          <Animatable.View animation="fadeIn" duration={1000}>
+            <Balloon
+              borderColor="#2E86C1"
+              backgroundColor="#D6EAF8"
+              borderWidth={2}
+              borderRadius={20}
+              triangleSize={15}
+              triangleDirection='bottom'
+              triangleOffset='23%'
+            >
+              <Text style={styles.questionText}><CustomText text={question.question} /></Text>
+            </Balloon>
           </Animatable.View>
         </View>
-        
+
         <View>
-          <QuestionHasImage/>
+          <QuestionHasImage />
         </View>
-       
-        
+
+
         <View style={imagesContainerStyle}>
           {question.images.map((image, index) => (
             <TouchableOpacity
