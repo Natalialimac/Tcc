@@ -195,6 +195,8 @@ const Leveling = ({ navigation, route }) => {
       }else{
         navigation.navigate("FeedbackNo", {name});
       }
+
+      
     }
 
     // é a última
