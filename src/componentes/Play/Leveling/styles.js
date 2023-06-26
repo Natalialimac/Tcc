@@ -1,20 +1,52 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#855BAF',
   },
-  tonyStyle: {
-    marginBottom: 20,
+  pointsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
+    width: "16%",
+    height:"7%",
+    top: '3%',
+    right: '4%',
+    backgroundColor: '#2E86C1',
+    borderRadius: 10,
+  },
+  pointsText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: '15%',
+  },
+  lottieAnimation: {
+    width: '65%',
+    height: '100%',
   },
   balloon: {
-    display: 'flex',
-    top: 0,
-    marginBottom: 20,
+    position: 'absolute',
+    top: '9%',
+    left:'0%',
+    //backgroundColor:'#2E86C1',
   },
+
+  tonyContainer: {
+    position: 'absolute',
+    top: '24%',
+    left: '0%',
+    //backgroundColor:'#222AE2',
+    
+  },
+  tonyStyle: {
+    position: 'absolute',
+  },
+
   questionText: {
     fontSize: 14,
     fontWeight: 'bold',
@@ -22,48 +54,27 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
+    flex: 1,
+    position: 'absolute',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: 20,
-    marginBottom: 20,
+    width: '100%',
+    height: '30%',
+    top: '70%',
+    //backgroundColor:'#F4A75C',
   },
-  imagesContainerAlt: {
-    marginBottom: 20,
-  },
+
   imageButton: {
+    width: '32%',
+    height: '65%',
+    marginRight: '1%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 10,
+    //backgroundColor:'#222AE2',
+    
   },
   image: {
-    borderRadius: 10,
-  },
-  feedbackText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 10,
-  },
-  pointsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    position: 'absolute',
-    top: '10%',
-    right: 20,
-    backgroundColor: '#2E86C1',
-    padding: 10,
-    borderRadius: 10,
-  },
-  pointsText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginRight: 5,
-  },
-  lottieAnimation: {
-    width: 30,
-    height: '100%',
   },
 });
 

@@ -225,7 +225,7 @@ const Leveling = ({ navigation, route }) => {
 
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];
-    const imagesContainerStyle = currentQuestion % 2 === 0 ? styles.imagesContainer : styles.imagesContainerAlt;
+    //const imagesContainerStyle = currentQuestion % 2 === 0 ? styles.imagesContainer : styles.imagesContainerAlt;
 
     return (
       <View style={styles.container}>
@@ -234,9 +234,6 @@ const Leveling = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{correctAnswers}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-        <Animatable.View>
-          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
-        </Animatable.View>
 
         <View style={styles.balloon}>
           <Animatable.View>
@@ -254,7 +251,11 @@ const Leveling = ({ navigation, route }) => {
           </Animatable.View>
         </View>
 
-        <View style={imagesContainerStyle}>
+        <Animatable.View style={styles.tonyContainer}>
+          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
+        </Animatable.View>
+
+        <View style={styles.imagesContainer}>
           {question.images.map((image, index) => (
             <TouchableOpacity
               key={index}
@@ -267,12 +268,6 @@ const Leveling = ({ navigation, route }) => {
             </TouchableOpacity>
           ))}
         </View>
-
-        {answerFeedback !== '' && (
-          <Animatable.View>
-            <Text style={styles.feedbackText}>{answerFeedback}</Text>
-          </Animatable.View>
-        )}
       </View>
     );
   }
