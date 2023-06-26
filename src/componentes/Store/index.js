@@ -46,7 +46,7 @@ const Store = ({ navigation, route }) => {
               ref={animationRef}
             />
             <View style={styles.itemTextContainer}>
-              <Text style={styles.itemText}>Desbloquear Avatar</Text>
+              <Text style={styles.itemText}>Desbloquear Chapéu</Text>
               <Text style={styles.itemStars}>Requer 100 estrelas</Text>
             </View>
           </View>
@@ -62,7 +62,7 @@ const Store = ({ navigation, route }) => {
               ref={animationRef}
             />
             <View style={styles.itemTextContainer}>
-              <Text style={styles.itemText}>Desbloquear Óculos</Text>
+              <Text style={styles.itemText}>Desbloquear Camisa</Text>
               <Text style={styles.itemStars}>Requer 200 estrelas</Text>
             </View>
           </View>
@@ -78,7 +78,7 @@ const Store = ({ navigation, route }) => {
               ref={animationRef}
             />
             <View style={styles.itemTextContainer}>
-              <Text style={styles.itemText}>Ouvir Descrição</Text>
+              <Text style={styles.itemText}> Desbloquear Avatar</Text>
               <Text style={styles.itemStars}>Requer 50 estrelas</Text>
             </View>
           </View>
