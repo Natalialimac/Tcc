@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#855BAF',
   },
   image: {
+    width: 200,
+    height: 200,
     marginBottom: 20,
   },
   background: {
