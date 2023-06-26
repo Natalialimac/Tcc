@@ -234,12 +234,12 @@ const Leveling = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{correctAnswers}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-        <Animatable.View animation="fadeIn" duration={1000}>
+        <Animatable.View>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
 
         <View style={styles.balloon}>
-          <Animatable.View animation="fadeIn" duration={1000}>
+          <Animatable.View>
             <Balloon
               borderColor="#2E86C1"
               backgroundColor="#D6EAF8"
@@ -261,7 +261,7 @@ const Leveling = ({ navigation, route }) => {
               style={styles.imageButton}
               onPress={() => handleAnswer(image.isCorrect)}
             >
-              <Animatable.View animation="bounceIn" duration={2000}>
+              <Animatable.View>
                 <Image source={image.source} style={styles.image} />
               </Animatable.View>
             </TouchableOpacity>
@@ -269,7 +269,7 @@ const Leveling = ({ navigation, route }) => {
         </View>
 
         {answerFeedback !== '' && (
-          <Animatable.View animation="fadeIn" duration={2000}>
+          <Animatable.View>
             <Text style={styles.feedbackText}>{answerFeedback}</Text>
           </Animatable.View>
         )}

@@ -21,7 +21,7 @@ const FeedbackNo = ({ navigation, route }) => {
         style={styles.animation}
         loop={true}
       />
-      <Animatable.View animation="fadeIn" duration={5000}>
+      <Animatable.View>
         <Text style={styles.title}>Olá, {name}! Você está sendo muito incrível. Porém, desta vez você errou.</Text>
         <Text style={styles.message}>Dica: Fique bem atento às palavras em destaque.</Text>
       </Animatable.View>
