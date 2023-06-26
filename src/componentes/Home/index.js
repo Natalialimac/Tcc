@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import LottieView from 'lottie-react-native';
 import * as Speech from 'expo-speech';
 
+
 import styles from './styles';
 
 const Home = ({ navigation }) => {
@@ -14,6 +15,8 @@ const Home = ({ navigation }) => {
       rate: 1,
     });
   };
+
+
   const animationRef = useRef(null);
 
   useEffect(() => {
