@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
@@ -231,7 +231,7 @@ const questions = [
 
 
 const Easy = ({ navigation, route }) => {
-  const { correctAnswers: previousCorrectAnswers, name } = route.params;
+  const { previousCorrectAnswers, previousIsCorrect, name } = route.params;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -239,19 +239,49 @@ const Easy = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
+  const handleLastFeedback= ()=>{
+    if (currentQuestion == 0) {
+      if (previousIsCorrect) {
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
+      }
+    }
+  }
+
+  useEffect(() => {
+    handleLastFeedback();
+
+  })
+
   const handleAnswer = (isCorrect) => {
-    if (isCorrect) {
-      setCorrectAnswers(correctAnswers + 1);
-      //alert('Ok');
-    } else {
-      //alert('no');
+    //não é a última
+    if (currentQuestion + 1 < questions.length){ 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers + 1);
+        navigation.navigate("FeedbackYes", {name});
+      }else{
+        navigation.navigate("FeedbackNo", {name});
+      }
+      setCurrentQuestion(currentQuestion + 1);
     }
 
-    if (currentQuestion + 1 === questions.length) {
-        navigation.navigate("Medium", { correctAnswers: countOk })
+    // é a última
+    if (currentQuestion + 1 === questions.length) { 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers +1);
+      }
+      let level = '';
+
+      if (correctAnswers >= 6) {
+        navigation.navigate("Medium", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+
+      } else{
+        navigation.navigate("Easy", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+      } 
     }
 
-    setCurrentQuestion(currentQuestion + 1);
+    
   };
 
   if (currentQuestion < questions.length) {

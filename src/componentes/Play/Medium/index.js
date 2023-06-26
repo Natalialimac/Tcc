@@ -230,7 +230,7 @@ const questions = [
 ];
 
 const Medium = ({ navigation, route }) => {
-  const { correctAnswers: previousCorrectAnswers, name } = route.params;
+  const { previousCorrectAnswers, previousIsCorrect, name } = route.params;
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -238,25 +238,50 @@ const Medium = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
-  const handleAnswer = (isCorrect) => {
-    if (isCorrect) {
-      setCorrectAnswers(correctAnswers + 1);
-      //alert('Ok');
-    } else {
-      //alert('no');
+  const handleLastFeedback= ()=>{
+    if (currentQuestion == 0) {
+      if (previousIsCorrect) {
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
+      }
     }
-
-    if (currentQuestion + 1 === questions.length) {
-        navigation.navigate("Hard", { correctAnswers: countOk });
-    }
-
-    setCurrentQuestion(currentQuestion + 1);
-  };
+  }
 
   useEffect(() => {
-    if (currentQuestion < questions.length) {
+    handleLastFeedback();
+
+  })
+
+  const handleAnswer = (isCorrect) => {
+    //não é a última
+    if (currentQuestion + 1 < questions.length){ 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers + 1);
+        navigation.navigate("FeedbackYes", {name});
+      }else{
+        navigation.navigate("FeedbackNo", {name});
+      }
+      setCurrentQuestion(currentQuestion + 1);
     }
-  }, [currentQuestion]);
+
+    // é a última
+    if (currentQuestion + 1 === questions.length) { 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers +1);
+      }
+      let level = '';
+
+      if (correctAnswers >= 6) {
+        navigation.navigate("Hard", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+
+      } else{
+        navigation.navigate("Medium", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+      } 
+    }
+
+    
+  };
 
   if (currentQuestion < questions.length) {
     const question = questions[currentQuestion];

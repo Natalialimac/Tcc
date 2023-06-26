@@ -187,26 +187,34 @@ const Leveling = ({ navigation, route }) => {
   const [answerFeedback, setAnswerFeedback] = useState('');
 
   const handleAnswer = (isCorrect) => {
-    if (isCorrect) {
-      setCorrectAnswers(correctAnswers + 1);
-      //alert('Ok');
-    } else {
-      //alert('no');
-    }
-
-    if (currentQuestion + 1 === questions.length) {
-
-      if (correctAnswers >= 8) {
-        navigation.navigate("Hard", { correctAnswers });
-      } else if (correctAnswers >= 5) {
-        navigation.navigate("Medium", { correctAnswers });
-      } else if (correctAnswers >= 2) {
-        navigation.navigate("Easy", { correctAnswers });
-      } else {
-        console.log('Nível não alcançado');
+    //não é a última
+    if (currentQuestion + 1 < questions.length){ 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers + 1);
+        navigation.navigate("FeedbackYes", {name});
+      }else{
+        navigation.navigate("FeedbackNo", {name});
       }
     }
 
+    // é a última
+    if (currentQuestion + 1 === questions.length) { 
+      if(isCorrect){
+        setCorrectAnswers(correctAnswers +1);
+      }
+
+      let level = '';
+      if (correctAnswers >= 8) {
+        navigation.navigate("Hard", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+
+      } else if (correctAnswers >= 5 && correctAnswers < 8) {
+        navigation.navigate("Medium", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+      } else if (correctAnswers >= 0 && correctAnswers < 5) {
+        navigation.navigate("Easy", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+      } else {
+        level = 'Nível não alcançado';
+      }
+    }
     setCurrentQuestion(currentQuestion + 1);
   };
 
