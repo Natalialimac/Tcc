@@ -32,6 +32,26 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
   },
+ /*  titleContainer: {
+    marginTop: '20%',
+    borderRadius: 30,
+    alignItems: 'center',
+    backgroundColor: '#E1F5FE', // Cor de fundo bonitinha
+    padding: 10, // Adicione algum espaçamento interno para melhorar a aparência
+  },
+  title: {
+    fontSize: 50,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: 'normal',
+    color: '#666',
+    textAlign: 'center',
+    marginTop: 10,
+  }, */
 });
 
 export default styles;

@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, TouchableOpacity, Text, Image } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { View, TouchableOpacity, Text } from 'react-native';
+import LottieView from 'lottie-react-native';
 import * as Speech from 'expo-speech';
 
 import styles from './styles';
@@ -13,11 +14,25 @@ const Home = ({ navigation }) => {
       rate: 1,
     });
   };
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    animationRef.current.play();
+  }, []);
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/logo2.png')} style={styles.logo} />
 
+      <LottieView
+        ref={animationRef}
+        source={require('../../assets/logo.json')}
+        style={styles.logo}
+        loop={true}
+      />
+      {/* <View style={styles.titleContainer}>
+        <Text style={styles.title}>T21</Text>
+        <Text style={styles.subtitle}>Contando com diversão</Text>
+      </View> */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
