@@ -62,7 +62,7 @@ const questions = [
         isCorrect: false
       },
       {
-        source: require('../../../assets/buttons/number3.png'),
+        source: require('../../../assets/buttons/number5.png'),
         isCorrect: false
       },
       {
@@ -165,11 +165,11 @@ const questions = [
     images: [
       {
         source: require('../../../assets/buttons/number9.png'),
-        isCorrect: true
+        isCorrect: false
       },
       {
         source: require('../../../assets/buttons/number7.png'),
-        isCorrect: false
+        isCorrect: true
       },
       {
         source: require('../../../assets/buttons/number14.png'),

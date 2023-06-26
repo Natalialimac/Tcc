@@ -141,7 +141,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Clique no mão com o @número 3'
+    question: 'Clique na mão com o @número 3'
   },
   {
     images: [
