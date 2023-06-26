@@ -90,7 +90,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é @8 / 2?'
+    question: 'Quanto é @8 ÷ 2?'
   },
   {
     images: [
@@ -124,7 +124,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é @3 * 4 + 4 ?'
+    question: 'Quanto é @3 × 4 + 4 ?'
   },
   {
     images: [
@@ -158,7 +158,7 @@ const questions = [
         isCorrect: false
       }
     ],
-    question: 'Quanto é @5 * 5 - 6?'
+    question: 'Quanto é @5 × 5 - 6?'
   },
   {
     images: [
@@ -175,7 +175,7 @@ const questions = [
         isCorrect: true
       }
     ],
-    question: 'Quanto é @20 / 10 * 2 ?'
+    question: 'Quanto é @20 ÷ 10 × 2 ?'
   },
 ];
 

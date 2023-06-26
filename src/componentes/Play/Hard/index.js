@@ -302,9 +302,10 @@ const Hard = ({ navigation, route }) => {
             <Balloon
               borderColor="#2E86C1"
               backgroundColor="#D6EAF8"
+              width={250}
               borderWidth={2}
               borderRadius={20}
-              triangleSize={15}
+              triangleSize={5}
               triangleDirection='bottom'
               triangleOffset='23%'
             >

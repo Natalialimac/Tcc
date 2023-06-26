@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     },
     balloon: {
       bottom: '25%',
+      left: '5%',
     },
     questionText: {
       fontSize: 10,

@@ -311,6 +311,7 @@ const Easy = ({ navigation, route }) => {
               borderColor="#2E86C1"
               backgroundColor="#D6EAF8"
               borderWidth={2}
+              width={250}
               borderRadius={20}
               triangleSize={15}
               triangleDirection='bottom'

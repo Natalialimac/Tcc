@@ -9,7 +9,11 @@ const styles = StyleSheet.create({
     top: '50%',
   },
   balloon: {
+    display:'flex',
     bottom: '25%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   questionText: {
     fontSize: 18,
@@ -18,6 +22,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   imagesContainer: {
+    display: 'flex',
     bottom:"1%",
     flexDirection:'row',
     justifyContent: 'center',             
@@ -25,6 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   imagesContainerAlt:{
+    display: 'flex',
     bottom: "1%",
     flexDirection:'row',
     justifyContent: 'center',             
