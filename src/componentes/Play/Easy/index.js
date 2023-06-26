@@ -232,7 +232,7 @@ const questions = [
 
 const Easy = ({ navigation, route }) => {
   const { correctAnswers: previousCorrectAnswers, name } = route.params;
-  
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
@@ -242,17 +242,13 @@ const Easy = ({ navigation, route }) => {
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
-      navigation.navigate("FeedbackYes", {name});
+      //alert('Ok');
     } else {
-      navigation.navigate("FeedbackNo", {name});
+      //alert('no');
     }
 
     if (currentQuestion + 1 === questions.length) {
-      if (correctAnswers >= 8) {
-        navigation.navigate("Medium", {correctAnswers: countOk})
-      } else {
-        console.log('Nível não alcançado');
-      }
+        navigation.navigate("Medium", { correctAnswers: countOk })
     }
 
     setCurrentQuestion(currentQuestion + 1);
@@ -295,7 +291,7 @@ const Easy = ({ navigation, route }) => {
           </Animatable.View>
         </View>
 
-        <View> 
+        <View>
 
           <QuestionHasImage />
         </View>

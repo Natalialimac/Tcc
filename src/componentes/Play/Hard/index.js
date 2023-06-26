@@ -241,17 +241,13 @@ const Hard = ({ navigation, route }) => {
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
-      navigation.navigate("FeedbackYes", { name });
+      //alert('Ok');
     } else {
-      navigation.navigate("FeedbackNo", { name });
+      //alert('no');
     }
 
     if (currentQuestion + 1 === questions.length) {
-      if (correctAnswers == 8) {
-        navigation.navigate("Hard")
-      } else {
-        console.log('Nível não alcançado');
-      }
+        navigation.navigate("Home")
     }
 
     setCurrentQuestion(currentQuestion + 1);
