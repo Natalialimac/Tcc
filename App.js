@@ -20,16 +20,16 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="About" component={About} options={{ headerShown: true }} />
+        <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
         <Stack.Screen name="Store" component={Store} options={{ headerShown: false }} />
-        <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: true }} />
-        <Stack.Screen name="Hard" component={Hard} options={{ headerShown: true }} />
-        <Stack.Screen name="Easy" component={Easy} options={{ headerShown: true }} />
-        <Stack.Screen name="Medium" component={Medium} options={{ headerShown: true }} />
-        <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: true }} />
-        <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: true }} />
-        <Stack.Screen name="ChildInfoScreen" component={ChildInfoScreen} options={{ headerShown: true }} />
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: true }} />
+        <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: false }} />
+        <Stack.Screen name="Hard" component={Hard} options={{ headerShown: false }} />
+        <Stack.Screen name="Easy" component={Easy} options={{ headerShown: false }} />
+        <Stack.Screen name="Medium" component={Medium} options={{ headerShown: false }} />
+        <Stack.Screen name="FeedbackYes" component={FeedbackYes} options={{ headerShown: false }} />
+        <Stack.Screen name="FeedbackNo" component={FeedbackNo} options={{ headerShown: false }} />
+        <Stack.Screen name="ChildInfoScreen" component={ChildInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
