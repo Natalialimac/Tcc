@@ -9,10 +9,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 180,
+    bottom: '15%',
+    width: '100%',
+    alignItems: 'center',
   },
   button: {
-    backgroundColor: '#FFED46',
+    backgroundColor: '#ffcd29',
     borderRadius: 30,
     width: 300,
     height: 50,
@@ -21,37 +23,41 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button2: {
-    marginTop: 15,
+    marginTop: 10,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
   },
-  logo: {
-    flex: 1,
-    resizeMode: 'cover',
+  logoContainer: {
+    marginBottom: '35%',
   },
- /*  titleContainer: {
-    marginTop: '20%',
+  logo: {
+    width: '80%',
+    aspectRatio: 1,
+    marginBottom: 10,
+  },
+  titleContainer: {
     borderRadius: 30,
     alignItems: 'center',
-    backgroundColor: '#E1F5FE', // Cor de fundo bonitinha
-    padding: 10, // Adicione algum espaçamento interno para melhorar a aparência
+    padding: 20,
+    marginBottom: '1%',
+    width: '80%',
   },
   title: {
     fontSize: 50,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#ffcd29',
     textAlign: 'center',
+    marginBottom: 10,
   },
   subtitle: {
-    fontSize: 18,
-    fontWeight: 'normal',
-    color: '#666',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
     textAlign: 'center',
-    marginTop: 10,
-  }, */
+  },
 });
 
 export default styles;

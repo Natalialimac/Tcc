@@ -22,17 +22,20 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>T21</Text>
+        <Text style={styles.subtitle}>Contando com diversão</Text>
+      </View>
+      <View style={styles.logoContainer}>
       <LottieView
         ref={animationRef}
         source={require('../../assets/logo.json')}
         style={styles.logo}
         loop={true}
       />
-      {/* <View style={styles.titleContainer}>
-        <Text style={styles.title}>T21</Text>
-        <Text style={styles.subtitle}>Contando com diversão</Text>
-      </View> */}
+      </View>
+     
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
