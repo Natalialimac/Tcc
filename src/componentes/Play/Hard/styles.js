@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
       top: '50%',
     },
     balloon: {
-      bottom: '25%',
-      left: '5%',
+      bottom: '29%',
+      right: '3%',
     },
     questionText: {
       fontSize: 10,
