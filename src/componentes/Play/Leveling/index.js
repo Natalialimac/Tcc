@@ -195,7 +195,6 @@ const Leveling = ({ navigation, route }) => {
     }
 
     if (currentQuestion + 1 === questions.length) {
-      let level = '';
 
       if (correctAnswers >= 8) {
         navigation.navigate("Hard", { correctAnswers });
@@ -204,7 +203,7 @@ const Leveling = ({ navigation, route }) => {
       } else if (correctAnswers >= 2) {
         navigation.navigate("Easy", { correctAnswers });
       } else {
-        level = 'Nível não alcançado';
+        console.log('Nível não alcançado');
       }
     }
 

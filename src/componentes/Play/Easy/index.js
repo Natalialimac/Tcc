@@ -248,12 +248,10 @@ const Easy = ({ navigation, route }) => {
     }
 
     if (currentQuestion + 1 === questions.length) {
-      let level = '';
-
       if (correctAnswers >= 8) {
         navigation.navigate("Medium", {correctAnswers: countOk})
       } else {
-        level = 'Nível não alcançado';
+        console.log('Nível não alcançado');
       }
     }
 
