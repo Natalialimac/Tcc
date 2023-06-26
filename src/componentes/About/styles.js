@@ -11,12 +11,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
       },
       background: {
-        backgroundColor: 'black',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         margin: 25,
         padding: 20,
         height:'85%',
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 20,
       },
       title: {
         fontSize: 24,
