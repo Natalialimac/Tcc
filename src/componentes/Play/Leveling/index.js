@@ -205,12 +205,12 @@ const Leveling = ({ navigation, route }) => {
 
       let level = '';
       if (correctAnswers >= 8) {
-        navigation.navigate("Hard", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
 
       } else if (correctAnswers >= 5 && correctAnswers < 8) {
-        navigation.navigate("Medium", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
       } else if (correctAnswers >= 0 && correctAnswers < 5) {
-        navigation.navigate("Easy", { correctAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Easy", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
       } else {
         level = 'Nível não alcançado';
       }
