@@ -17,7 +17,7 @@ const ChildInfoScreen = ({ navigation }) => {
 
     const parsedAge = parseInt(age, 10);
 
-    if (parsedAge <= 0 || parsedAge > 15) {
+    if (parsedAge <= 6 || parsedAge > 15) {
       alert('A idade deve estar entre 7 e 15 anos.');
       return;
     }
