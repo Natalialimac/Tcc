@@ -189,7 +189,8 @@ const Leveling = ({ navigation, route }) => {
   const [answerFeedback, setAnswerFeedback] = useState('');
 
   const handleTextToSpeech = (text) => {
-    Speech.speak(text, { language: 'pt-BR' });
+    const sanitizedText = text.replace(/@/g, '');
+    Speech.speak(sanitizedText, { language: 'pt-BR' });
   };
 
   const handleAnswer = (isCorrect) => {
