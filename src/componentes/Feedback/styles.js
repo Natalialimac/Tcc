@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+ 
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -38,6 +39,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFD700',
     borderWidth: 3, 
     borderColor: '#FFD700',
+  },
+
+  disabledButton: {
+    opacity: 0.5,
   },
 });
 
