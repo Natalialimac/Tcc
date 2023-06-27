@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import LottieView from 'lottie-react-native';
 import * as Animatable from 'react-native-animatable';
+import * as Speech from 'expo-speech';
+import LottieView from 'lottie-react-native';
 import styles from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const FeedbackNo = ({ navigation, route }) => {
   const { name } = route.params;
@@ -13,6 +15,10 @@ const FeedbackNo = ({ navigation, route }) => {
     animationRef.current.play();
   }, []);
 
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
+
   return (
     <View style={styles.container}>
       <LottieView
@@ -21,6 +27,12 @@ const FeedbackNo = ({ navigation, route }) => {
         style={styles.animation}
         loop={true}
       />
+      <TouchableOpacity
+        onPress={() => handleTextToSpeech('Você está sendo muito incrível. Porém, desta vez você errou. Fique bem atento às palavras em destaque.')}
+        style={styles.audioIcon}
+      >
+        <FontAwesome5 name="volume-up" size={24} color="white" />
+      </TouchableOpacity>
       <Animatable.View>
         <Text style={styles.title}>Olá, {name}! Você está sendo muito incrível. Porém, desta vez você errou.</Text>
         <Text style={styles.message}>Dica: Fique bem atento às palavras em destaque.</Text>

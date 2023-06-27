@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text, Image, ScrollView, Dimensions } from 'rea
 import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
 import styles from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Store = ({ navigation, route }) => {
   //const { correctAnswers: previousCorrectAnswers } = route.params;
@@ -13,15 +14,7 @@ const Store = ({ navigation, route }) => {
     animationRef.current.play();
   }, []);
 
-  const unlockAvatar = () => {
-    // Lógica para desbloquear o avatar
-  };
-
-  const unlockGlasses = () => {
-    // Lógica para desbloquear os óculos
-  };
-
-  const speakText = (text) => {
+  const handleTextToSpeech = (text) => {
     Speech.speak(text, { language: 'pt-BR' });
   };
 
@@ -35,8 +28,14 @@ const Store = ({ navigation, route }) => {
       </View>
       <Text style={styles.storeTitle}>Loja</Text>
 
+      <TouchableOpacity
+        onPress={() => handleTextToSpeech('Olá amiguinho, Clique nos itens para desbloquear. Lembrando que precisam ter uma quantidade de pontos!')}
+        style={styles.audioIcon}
+      >
+        <FontAwesome5 name="volume-up" size={24} color="white" />
+      </TouchableOpacity>
       <ScrollView style={styles.scrollContainer}>
-        <TouchableOpacity onPress={unlockAvatar}>
+        <TouchableOpacity>
           <View style={styles.itemContainer}>
             <LottieView
               source={require('../../assets/avatar2.json')}
@@ -52,7 +51,7 @@ const Store = ({ navigation, route }) => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={unlockGlasses}>
+        <TouchableOpacity>
           <View style={styles.itemContainer}>
             <LottieView
               source={require('../../assets/avatar3.json')}
@@ -68,7 +67,7 @@ const Store = ({ navigation, route }) => {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => speakText('Clique para desbloquear o avatar')}>
+        <TouchableOpacity>
           <View style={styles.itemContainer}>
             <LottieView
               source={require('../../assets/avatar4.json')}

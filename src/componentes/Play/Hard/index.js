@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
 
@@ -274,6 +276,10 @@ const Hard = ({ navigation, route }) => {
       navigation.navigate("Home");
 
     }
+  };
+
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
   };
 
   if (currentQuestion < questions.length) {

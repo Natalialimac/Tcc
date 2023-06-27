@@ -4,7 +4,9 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const questions = [
   {
@@ -237,6 +239,10 @@ const Medium = ({ navigation, route }) => {
   const [answerFeedback, setAnswerFeedback] = useState('');
 
   const countOk = correctAnswers + previousCorrectAnswers;
+
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
 
   const handleLastFeedback = () => {
     if (currentQuestion == 0) {

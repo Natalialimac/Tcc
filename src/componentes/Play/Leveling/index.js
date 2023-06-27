@@ -5,6 +5,8 @@ import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import * as Speech from 'expo-speech';
 
 const questions = [
   {
@@ -186,33 +188,37 @@ const Leveling = ({ navigation, route }) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
 
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
+
   const handleAnswer = (isCorrect) => {
     //não é a última
-    if (currentQuestion + 1 < questions.length){ 
-      if(isCorrect){
+    if (currentQuestion + 1 < questions.length) {
+      if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
-        navigation.navigate("FeedbackYes", {name});
-      }else{
-        navigation.navigate("FeedbackNo", {name});
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
       }
 
-      
+
     }
 
     // é a última
-    if (currentQuestion + 1 === questions.length) { 
-      if(isCorrect){
-        setCorrectAnswers(correctAnswers +1);
+    if (currentQuestion + 1 === questions.length) {
+      if (isCorrect) {
+        setCorrectAnswers(correctAnswers + 1);
       }
 
       let level = '';
       if (correctAnswers >= 8) {
-        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
 
       } else if (correctAnswers >= 5 && correctAnswers < 8) {
-        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
       } else if (correctAnswers >= 0 && correctAnswers < 5) {
-        navigation.navigate("Easy", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Easy", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
       } else {
         level = 'Nível não alcançado';
       }
@@ -248,6 +254,12 @@ const Leveling = ({ navigation, route }) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
+              <TouchableOpacity
+                onPress={() => handleTextToSpeech(question.question)}
+                style={styles.audioIcon}
+              >
+                <FontAwesome5 name="volume-up" size={24} color="black" />
+              </TouchableOpacity>
               <Text style={styles.questionText}><CustomText text={question.question} /></Text>
             </Balloon>
           </Animatable.View>
