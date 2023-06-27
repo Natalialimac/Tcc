@@ -241,7 +241,8 @@ const Medium = ({ navigation, route }) => {
   const countOk = correctAnswers + previousCorrectAnswers;
 
   const handleTextToSpeech = (text) => {
-    Speech.speak(text, { language: 'pt-BR' });
+    const sanitizedText = text.replace(/@/g, '');
+    Speech.speak(sanitizedText, { language: 'pt-BR' });
   };
 
   const handleLastFeedback = () => {
@@ -320,6 +321,12 @@ const Medium = ({ navigation, route }) => {
                 triangleDirection='bottom'
                 triangleOffset='23%'
               >
+                <TouchableOpacity
+                  onPress={() => handleTextToSpeech(question.question)}
+                  style={styles.audioIcon}
+                >
+                  <FontAwesome5 name="volume-up" size={24} color="black" />
+                </TouchableOpacity>
                 <Text style={styles.questionText}><CustomText text={question.question} /></Text>
               </Balloon>
             </Animatable.View>

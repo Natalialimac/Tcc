@@ -242,7 +242,8 @@ const Easy = ({ navigation, route }) => {
   const countOk = correctAnswers + previousCorrectAnswers;
 
   const handleTextToSpeech = (text) => {
-    Speech.speak(text, { language: 'pt-BR' });
+    const sanitizedText = text.replace(/@/g, '');
+    Speech.speak(sanitizedText, { language: 'pt-BR' });
   };
 
   const handleLastFeedback = () => {
