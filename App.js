@@ -13,6 +13,10 @@ import Store from './src/componentes/Store/index.js';
 import ChildInfoScreen from './src/componentes/Infor/index.js';
 import WelcomeScreen from './src/componentes/Welcome/index.js';
 
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
+
 const Stack = createStackNavigator();
 
 export default function App() {
