@@ -238,7 +238,7 @@ const Hard = ({ navigation, route }) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
 
-  const countOk = correctAnswers + previousCorrectAnswers;
+  var countOk = correctAnswers + previousCorrectAnswers;
 
   const handleLastFeedback = () => {
     if (currentQuestion == 0) {
@@ -271,9 +271,15 @@ const Hard = ({ navigation, route }) => {
     if (currentQuestion + 1 === questions.length) {
       if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
+        countOk = countOk + 1;
       }
       let level = '';
-      navigation.navigate("Home");
+      if (correctAnswers >= 6) {
+        navigation.navigate('Home');
+
+      } else {
+        setCurrentQuestion(0);
+      }
 
     }
   };

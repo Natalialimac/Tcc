@@ -238,7 +238,7 @@ const Medium = ({ navigation, route }) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [answerFeedback, setAnswerFeedback] = useState('');
 
-  const countOk = correctAnswers + previousCorrectAnswers;
+  var countOk = correctAnswers + previousCorrectAnswers;
 
   const handleTextToSpeech = (text) => {
     const sanitizedText = text.replace(/@/g, '');
@@ -276,14 +276,16 @@ const Medium = ({ navigation, route }) => {
     if (currentQuestion + 1 === questions.length) {
       if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
+        countOk = countOk + 1;
       }
       let level = '';
 
       if (correctAnswers >= 6) {
-        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
+        navigation.navigate("Hard", { previousCorrectAnswers: countOk, previousIsCorrect: isCorrect, name: name });
 
       } else {
-        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
+        setCurrentQuestion(0);
+        //navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
       }
     }
 
