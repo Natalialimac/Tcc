@@ -242,7 +242,7 @@ const Leveling = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{correctAnswers}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-
+      <View style={styles.tonyBaloonContainer}>
         <View style={styles.balloon}>
           <Animatable.View>
             <Balloon
@@ -268,7 +268,7 @@ const Leveling = ({ navigation, route }) => {
         <Animatable.View style={styles.tonyContainer}>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
-
+        </View>
         <View style={styles.imagesContainer}>
           {question.images.map((image, index) => (
             <TouchableOpacity

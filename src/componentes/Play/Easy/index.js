@@ -307,38 +307,39 @@ const Easy = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{countOk}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-        <Animatable.View style={styles.tonyContainer}>
-          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
-        </Animatable.View>
 
-        <View style={styles.balloon}>
-          <Animatable.View>
-            <Balloon
-              borderColor="#2E86C1"
-              backgroundColor="#D6EAF8"
-              borderWidth={2}
-              width={250}
-              borderRadius={20}
-              triangleSize={15}
-              triangleDirection='bottom'
-              triangleOffset='23%'
-            >
-              <TouchableOpacity
-                onPress={() => handleTextToSpeech(question.question)}
-                style={styles.audioIcon}
+        <View style={styles.tonyBaloonContainer}>
+          <View style={styles.balloon}>
+            <Animatable.View>
+              <Balloon
+                borderColor="#2E86C1"
+                backgroundColor="#D6EAF8"
+                width={"85%"}
+                borderWidth={2}
+                borderRadius={20}
+                triangleSize={15}
+                triangleDirection='bottom'
+                triangleOffset='23%'
               >
-                <FontAwesome5 name="volume-up" size={24} color="black" />
-              </TouchableOpacity>
-              <Text style={styles.questionText}><CustomText text={question.question} /></Text>
-            </Balloon>
+                <TouchableOpacity
+                  onPress={() => handleTextToSpeech(question.question)}
+                  style={styles.audioIcon}
+                >
+                  <FontAwesome5 name="volume-up" size={24} color="black" />
+                </TouchableOpacity>
+                <Text style={styles.questionText}><CustomText text={question.question} /></Text>
+              </Balloon>
+            </Animatable.View>
+          </View>
+
+          <Animatable.View style={styles.tonyContainer}>
+            <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
           </Animatable.View>
         </View>
 
         <View style={styles.questionImageContainer}>
-
           <QuestionHasImage />
         </View>
-
 
         <View style={imagesContainerStyle}>
           {question.images.map((image, index) => (
@@ -347,7 +348,7 @@ const Easy = ({ navigation, route }) => {
               style={styles.imageButton}
               onPress={() => handleAnswer(image.isCorrect)}
             >
-              <Animatable.View >
+              <Animatable.View>
                 <Image source={image.source} style={styles.image} />
               </Animatable.View>
             </TouchableOpacity>

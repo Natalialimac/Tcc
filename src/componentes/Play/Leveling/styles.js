@@ -4,8 +4,6 @@ const styles = StyleSheet.create({
   
   container: {
     flex: 1,
-    //justifyContent: 'center',
-    //alignItems: 'center',
     backgroundColor: '#855BAF',
   },
   pointsContainer: {
@@ -29,25 +27,29 @@ const styles = StyleSheet.create({
     width: '65%',
     height: '100%',
   },
-  balloon: {
-    position: 'absolute',
-    top: '15%',
-    left:'0%',
-    //backgroundColor:'#2E86C1',
+  tonyBaloonContainer:{
+    position:'absolute',
+    width:'100%',
+    height:'50%',
+    top: '14%',
+    
   },
-
+  balloon: {
+    position: 'relative',
+    width: '100%',
+    left:'0%',
+ 
+  },
   tonyContainer: {
-    position: 'absolute',
+    position: 'relative',
+    resizeMode: 'contain',
     width: '50%',
-    top: '30%',
-    //backgroundColor:'#FF2AE2',
+ 
     
   },
   tonyStyle: {
     width: '85%',
-    //backgroundColor:'#AA2AE2',
   },
-
   questionText: {
     fontSize: 18,
     fontWeight: 'bold',

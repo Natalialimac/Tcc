@@ -26,16 +26,24 @@ const styles = StyleSheet.create({
     width: '65%',
     height: '100%',
   },
+  tonyBaloonContainer:{
+    position:'absolute',
+    width:'100%',
+    height:'50%',
+    top: '14%',
+    
+  },
   balloon: {
-    position: 'absolute',
-    top: '15%',
+    position: 'relative',
+    width: '100%',
     left:'0%',
+ 
   },
   tonyContainer: {
-    position: 'absolute',
+    position: 'relative',
+    resizeMode: 'contain',
     width: '50%',
-    top: '30%',
-    //backgroundColor:'#FF2AE2',
+ 
     
   },
   tonyStyle: {
@@ -88,18 +96,15 @@ const styles = StyleSheet.create({
   },
   questionImageContainer:{
     top:'33%',
-    //backgroundColor:'#FF2AE2'
   },
   questionImage: {
     position: 'absolute',
     resizeMode: 'contain',
     width:'45%',
     right: '5%',
-    //top:'75%',
-    //backgroundColor:'#BB2AE2'
-    //bottom: '50%'
   },
 
 }); 
+
 
 export default styles;
