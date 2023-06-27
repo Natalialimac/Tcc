@@ -301,7 +301,7 @@ const Easy = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{countOk}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-        <Animatable.View>
+        <Animatable.View style={styles.tonyContainer}>
           <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
         </Animatable.View>
 
@@ -322,7 +322,7 @@ const Easy = ({ navigation, route }) => {
           </Animatable.View>
         </View>
 
-        <View>
+        <View style={styles.questionImageContainer}>
 
           <QuestionHasImage />
         </View>

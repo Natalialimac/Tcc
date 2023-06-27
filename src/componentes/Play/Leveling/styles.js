@@ -4,17 +4,17 @@ const styles = StyleSheet.create({
   
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    //justifyContent: 'center',
+    //alignItems: 'center',
     backgroundColor: '#855BAF',
   },
   pointsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    width: "16%",
-    height:"7%",
-    top: '3%',
+    width: "18%",
+    height:"5%",
+    top: '9%',
     right: '4%',
     backgroundColor: '#2E86C1',
     borderRadius: 10,
@@ -31,24 +31,25 @@ const styles = StyleSheet.create({
   },
   balloon: {
     position: 'absolute',
-    top: '9%',
+    top: '15%',
     left:'0%',
     //backgroundColor:'#2E86C1',
   },
 
   tonyContainer: {
     position: 'absolute',
-    top: '24%',
-    left: '0%',
-    //backgroundColor:'#222AE2',
+    width: '50%',
+    top: '30%',
+    //backgroundColor:'#FF2AE2',
     
   },
   tonyStyle: {
-    position: 'absolute',
+    width: '85%',
+    //backgroundColor:'#AA2AE2',
   },
 
   questionText: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '30%',
-    top: '70%',
+    bottom: '5%',
     //backgroundColor:'#F4A75C',
   },
 

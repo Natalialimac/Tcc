@@ -238,7 +238,7 @@ const Medium = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
-  const handleLastFeedback= ()=>{
+  const handleLastFeedback = () => {
     if (currentQuestion == 0) {
       if (previousIsCorrect) {
         navigation.navigate("FeedbackYes", { name });
@@ -255,32 +255,32 @@ const Medium = ({ navigation, route }) => {
 
   const handleAnswer = (isCorrect) => {
     //não é a última
-    if (currentQuestion + 1 < questions.length){ 
-      if(isCorrect){
+    if (currentQuestion + 1 < questions.length) {
+      if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
-        navigation.navigate("FeedbackYes", {name});
-      }else{
-        navigation.navigate("FeedbackNo", {name});
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
       }
       setCurrentQuestion(currentQuestion + 1);
     }
 
     // é a última
-    if (currentQuestion + 1 === questions.length) { 
-      if(isCorrect){
-        setCorrectAnswers(correctAnswers +1);
+    if (currentQuestion + 1 === questions.length) {
+      if (isCorrect) {
+        setCorrectAnswers(correctAnswers + 1);
       }
       let level = '';
 
       if (correctAnswers >= 6) {
-        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
 
-      } else{
-        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
-      } 
+      } else {
+        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
+      }
     }
 
-    
+
   };
 
   if (currentQuestion < questions.length) {
@@ -300,27 +300,31 @@ const Medium = ({ navigation, route }) => {
           <Text style={styles.pointsText}>{countOk}</Text>
           <LottieView source={require('../../../assets/star.json')} style={styles.lottieAnimation} autoPlay loop />
         </View>
-        <Animatable.View>
-          <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
-        </Animatable.View>
 
-        <View style={styles.balloon}>
-          <Animatable.View>
-            <Balloon
-              borderColor="#2E86C1"
-              backgroundColor="#D6EAF8"
-              borderWidth={2}
-              borderRadius={20}
-              triangleSize={15}
-              triangleDirection='bottom'
-              triangleOffset='23%'
-            >
-              <Text style={styles.questionText}><CustomText text={question.question} /></Text>
-            </Balloon>
+        <View style={styles.tonyBaloonContainer}>
+          <View style={styles.balloon}>
+            <Animatable.View>
+              <Balloon
+                borderColor="#2E86C1"
+                backgroundColor="#D6EAF8"
+                width={"85%"}
+                borderWidth={2}
+                borderRadius={20}
+                triangleSize={15}
+                triangleDirection='bottom'
+                triangleOffset='23%'
+              >
+                <Text style={styles.questionText}><CustomText text={question.question} /></Text>
+              </Balloon>
+            </Animatable.View>
+          </View>
+
+          <Animatable.View style={styles.tonyContainer}>
+            <Image source={require('../../../assets/happyTony.png')} style={styles.tonyStyle} />
           </Animatable.View>
         </View>
 
-        <View>
+        <View style={styles.questionImageContainer}>
           <QuestionHasImage />
         </View>
 
