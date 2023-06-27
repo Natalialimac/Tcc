@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -8,17 +10,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#855BAF',
   },
   buttonContainer: {
+    justifyContent: 'space-around',
     position: 'absolute',
-    bottom: '15%',
+    bottom: '10%',
     width: '100%',
+    height: '30%',
     alignItems: 'center',
   },
   button: {
     backgroundColor: '#ffcd29',
     borderRadius: 30,
-    width: 300,
-    height: 50,
-    marginBottom: 10,
+    width: '90%',
+    height: '25%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -26,7 +29,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: 'bold',
     color: 'black',
   },
@@ -34,26 +37,27 @@ const styles = StyleSheet.create({
     marginBottom: '35%',
   },
   logo: {
-    width: '80%',
-    aspectRatio: 1,
+    width: width * 0.8,
     marginBottom: 10,
   },
   titleContainer: {
+    position: 'absolute',
     borderRadius: 30,
     alignItems: 'center',
     padding: 20,
     marginBottom: '1%',
     width: '80%',
+    top: '5%',
   },
   title: {
-    fontSize: 50,
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#ffcd29',
     textAlign: 'center',
     marginBottom: 10,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center',

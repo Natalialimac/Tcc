@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import LottieView from 'lottie-react-native';
 import * as Speech from 'expo-speech';
-import { FontAwesome5 } from '@expo/vector-icons';
+
 
 import styles from './styles';
 
@@ -10,7 +10,6 @@ const Home = ({ navigation }) => {
   const handleTextToSpeech = (text) => {
     Speech.speak(text, { language: 'pt-BR' });
   };
-
   const animationRef = useRef(null);
 
   useEffect(() => {
