@@ -20,8 +20,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Stack.Screen name="About" component={About} options={{ headerShown: false }} />
-        <Stack.Screen name="Store" component={Store} options={{ headerShown: false }} />
+        <Stack.Screen name="About" component={About} options={{ headerShown: true }} />
+        <Stack.Screen name="Store" component={Store} options={{ headerShown: true }} />
         <Stack.Screen name="Leveling" component={Leveling} options={{ headerShown: false }} />
         <Stack.Screen name="Hard" component={Hard} options={{ headerShown: false }} />
         <Stack.Screen name="Easy" component={Easy} options={{ headerShown: false }} />

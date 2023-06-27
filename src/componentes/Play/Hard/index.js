@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import styles from './styles';
 import Balloon from "react-native-balloon";
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
 
@@ -238,7 +240,7 @@ const Hard = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
-  const handleLastFeedback= ()=>{
+  const handleLastFeedback = () => {
     if (currentQuestion == 0) {
       if (previousIsCorrect) {
         navigation.navigate("FeedbackYes", { name });
@@ -252,28 +254,32 @@ const Hard = ({ navigation, route }) => {
     handleLastFeedback();
 
   })
-  
+
   const handleAnswer = (isCorrect) => {
     //não é a última
-    if (currentQuestion + 1 < questions.length){ 
-      if(isCorrect){
+    if (currentQuestion + 1 < questions.length) {
+      if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
-        navigation.navigate("FeedbackYes", {name});
-      }else{
-        navigation.navigate("FeedbackNo", {name});
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
       }
       setCurrentQuestion(currentQuestion + 1);
     }
 
     // é a última do último nível, levar para tela diferente? "Obrigado por jogar..."
-    if (currentQuestion + 1 === questions.length) { 
-      if(isCorrect){
-        setCorrectAnswers(correctAnswers +1);
+    if (currentQuestion + 1 === questions.length) {
+      if (isCorrect) {
+        setCorrectAnswers(correctAnswers + 1);
       }
       let level = '';
-        navigation.navigate("Home");
-      
+      navigation.navigate("Home");
+
     }
+  };
+
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
   };
 
   if (currentQuestion < questions.length) {
@@ -309,6 +315,12 @@ const Hard = ({ navigation, route }) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
+              <TouchableOpacity
+                onPress={() => handleTextToSpeech(question.question)}
+                style={styles.audioIcon}
+              >
+                <FontAwesome5 name="volume-up" size={24} color="black" />
+              </TouchableOpacity>
               <Text style={styles.questionText}><CustomText text={question.question} /></Text>
             </Balloon>
           </Animatable.View>

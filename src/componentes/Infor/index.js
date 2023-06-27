@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
 import styles from './styles';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const ChildInfoScreen = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -16,7 +18,7 @@ const ChildInfoScreen = ({ navigation }) => {
     const parsedAge = parseInt(age, 10);
 
     if (parsedAge <= 0 || parsedAge > 15) {
-      alert('A idade deve estar entre 1 e 15 anos.');
+      alert('A idade deve estar entre 7 e 15 anos.');
       return;
     }
 
@@ -25,12 +27,23 @@ const ChildInfoScreen = ({ navigation }) => {
       age: parsedAge
     });
   };
+  
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
 
   return (
+
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
+      <TouchableOpacity
+        onPress={() => handleTextToSpeech('Olá amiguinho. informe seu nome e sua idade para começarmos a jogar!')}
+        style={styles.audioIcon}
+      >
+        <FontAwesome5 name="volume-up" size={24} color="white" />
+      </TouchableOpacity>
       <Text style={styles.tigerText}>Olá amiguinho! Ops, {name}</Text>
 
       <LottieView

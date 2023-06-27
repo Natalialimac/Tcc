@@ -4,7 +4,9 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const questions = [
   {
@@ -239,6 +241,10 @@ const Easy = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
+
   const handleLastFeedback = () => {
     if (currentQuestion == 0) {
       if (previousIsCorrect) {
@@ -317,6 +323,12 @@ const Easy = ({ navigation, route }) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
+              <TouchableOpacity
+                onPress={() => handleTextToSpeech(question.question)}
+                style={styles.audioIcon}
+              >
+                <FontAwesome5 name="volume-up" size={24} color="black" />
+              </TouchableOpacity>
               <Text style={styles.questionText}><CustomText text={question.question} /></Text>
             </Balloon>
           </Animatable.View>

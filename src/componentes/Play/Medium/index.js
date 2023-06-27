@@ -4,7 +4,9 @@ import styles from './styles';
 import Balloon from "react-native-balloon";
 import * as Animatable from 'react-native-animatable';
 import CustomText from '../../CustomText';
+import * as Speech from 'expo-speech';
 import LottieView from 'lottie-react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const questions = [
   {
@@ -238,7 +240,11 @@ const Medium = ({ navigation, route }) => {
 
   const countOk = correctAnswers + previousCorrectAnswers;
 
-  const handleLastFeedback= ()=>{
+  const handleTextToSpeech = (text) => {
+    Speech.speak(text, { language: 'pt-BR' });
+  };
+
+  const handleLastFeedback = () => {
     if (currentQuestion == 0) {
       if (previousIsCorrect) {
         navigation.navigate("FeedbackYes", { name });
@@ -255,32 +261,32 @@ const Medium = ({ navigation, route }) => {
 
   const handleAnswer = (isCorrect) => {
     //não é a última
-    if (currentQuestion + 1 < questions.length){ 
-      if(isCorrect){
+    if (currentQuestion + 1 < questions.length) {
+      if (isCorrect) {
         setCorrectAnswers(correctAnswers + 1);
-        navigation.navigate("FeedbackYes", {name});
-      }else{
-        navigation.navigate("FeedbackNo", {name});
+        navigation.navigate("FeedbackYes", { name });
+      } else {
+        navigation.navigate("FeedbackNo", { name });
       }
       setCurrentQuestion(currentQuestion + 1);
     }
 
     // é a última
-    if (currentQuestion + 1 === questions.length) { 
-      if(isCorrect){
-        setCorrectAnswers(correctAnswers +1);
+    if (currentQuestion + 1 === questions.length) {
+      if (isCorrect) {
+        setCorrectAnswers(correctAnswers + 1);
       }
       let level = '';
 
       if (correctAnswers >= 6) {
-        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
+        navigation.navigate("Hard", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
 
-      } else{
-        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers , previousIsCorrect: isCorrect, name: name});
-      } 
+      } else {
+        navigation.navigate("Medium", { previousCorrectAnswers: correctAnswers, previousIsCorrect: isCorrect, name: name });
+      }
     }
 
-    
+
   };
 
   if (currentQuestion < questions.length) {
@@ -315,6 +321,12 @@ const Medium = ({ navigation, route }) => {
               triangleDirection='bottom'
               triangleOffset='23%'
             >
+              <TouchableOpacity
+                onPress={() => handleTextToSpeech(question.question)}
+                style={styles.audioIcon}
+              >
+                <FontAwesome5 name="volume-up" size={24} color="black" />
+              </TouchableOpacity>
               <Text style={styles.questionText}><CustomText text={question.question} /></Text>
             </Balloon>
           </Animatable.View>
